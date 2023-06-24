@@ -1,0 +1,100 @@
+.container-contact{
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    z-index: 50;
+    inset: 0; 
+}
+#submit{
+    @apply bg-complementTwo font-h1 text-[32px] my-2 cursor-pointer text-complementOne; 
+}
+.container-contact *{
+    opacity: 0; 
+}
+.container-contact[data-inview="true"] *{
+    transition: opacity 150ms ease;
+    opacity: 1;
+}
+.container-contact[data-inview="false"]{
+    display: none;
+}
+@keyframes get-in-form{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(100);
+    }
+}
+@keyframes get-out-form{
+    from{
+        transform: scale(100);
+    }
+    to{
+        transform: scale(0);
+    }
+}
+.background-form{
+    background-color:var(--light-primary);
+    border-radius: 100%;
+    @apply -top-5 -right-5 w-20 h-20 fixed; 
+}
+.background-form[data-inview="true"]{
+    transform: scale(100);
+}
+.background-form[data-inview="false"]{
+    display: none;
+}
+.background-form[data-inview="get-in-form"]{
+    animation: get-in-form 750ms forwards;
+}
+.background-form[data-inview="get-out-form"]{
+    animation: get-out-form 750ms forwards;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-inline: auto;
+    @apply w-3/4 md:w-1/2; 
+}
+.contact-cross{
+    position: absolute; 
+    @apply right-5 top-5 w-16 aspect-square fill-secundary md:right-14; 
+}
+.contact input, .contact textarea{
+    @apply p-5 outline-none rounded-lg bg-[transparent] border-solid border-2 border-primary font-p w-full text-complementary ; 
+}
+.contact textarea{
+    @apply resize-none; 
+}
+.contact label{
+    @apply text-primary font-h1 relative pt-6; 
+}
+.contact label > span{
+    @apply absolute top-0 left-5; 
+}
+@keyframes confirmation-animation{
+    from{
+        transform: translateY(150%);
+    }
+    to{
+        transform: translate(0);
+    }
+}
+@keyframes confirmation-animation-out{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(150%);
+    }
+}
+.confimation[data-state="true"]{
+    animation:confirmation-animation 500ms forwards;
+}
+.confimation[data-state="false"]{
+    animation:confirmation-animation-out 500ms forwards;
+    animation-delay: 1000ms;
+}

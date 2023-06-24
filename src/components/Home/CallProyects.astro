@@ -1,0 +1,19 @@
+---
+import {Dots} from "../../assets/Icons"
+import ButtonPrimary from "../App/ButtonPrimary.astro";
+---
+<section class="relative">
+    <h1 class="text-secundary md:text-7xl text-left md:ml-5 text-[14vw] md:h-3/4 py-20 md:py-0">
+        View <br>Proyects
+    </h1>
+    <ButtonPrimary href="/proyects" className="absolute md:right-10 right-5 bottom-5"/> 
+    <div class="absolute left-10 bottom-10">
+        <Dots />
+    </div>
+</section>
+<style>
+    section{
+        grid-area: section; 
+        @apply p-5 md:bg-complementTwo rounded-lg; 
+    }
+</style>

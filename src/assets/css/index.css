@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+html{
+    @apply bg-primary text-complementary; 
+}
+@font-face {
+    font-family: "Alien";
+    src: url("../fonts/Alien-Planet-3.ttf");
+}
+:root{
+    --primary-font: "Alien", sans-serif; 
+    --paragraft-font: 'Nunito', sans-serif;
+    /* --primary: #353535;  */
+    --primary: #000; 
+    --light-primary: #2a2a2a; 
+    --secundary: #CF5C36;
+    --complementary:#FFFFFF;
+    --complementOne: #FFB20F; 
+    --complementTwo:#61988E; 
+}
+h1{
+    font-family: var(--primary-font);
+}
+p{
+    font-family: var(--paragraft-font);
+}

@@ -1,0 +1,19 @@
+---
+import ErrorPage from "../layouts/Default.astro";
+import Nav from "../components/App/Navegation.astro"
+import ButtonPrimary from "../components/App/ButtonPrimary.astro";
+---
+
+<ErrorPage desc="It ocurre an error in the url" title="404">
+    <ul class="fixed inset-0 flex justify-center bg-complementTwo h-screen flex-col text-center gap-y-16">
+        <Nav/> 
+        <li>
+            <h1 class="font-h1 text-[5rem] text-primary">
+                404 Error 
+            </h1>
+        </li>
+        <li>
+            <ButtonPrimary href="/"/> 
+        </li>
+    </ul>
+</ErrorPage>

@@ -1,0 +1,49 @@
+---
+import ProjectsPage from "../layouts/Default.astro";
+import Nav from "../components/App/Navegation.astro";
+import Footer from "../components/App/Footer.astro";
+import ProyectCarrusel from "../components/ProyectCarrusel"
+---
+<ProjectsPage desc="Showcase of Projects I have made" title="Projects">
+  <div class="loading-section pre-loaded"></div>
+  <Nav textLogo="Projects"/>
+  <main class="md:w-screen md:h-fit p-5 pt-24 min-h-screen">
+    <ProyectCarrusel client:only/>
+  </main>
+  <Footer style="md:m-5"/>
+</ProjectsPage>
+<script>
+  const div = document.querySelector(".loading-section"); 
+  div?.addEventListener("animationend" ,() => {
+      div.classList.remove("pre-loaded"); 
+      div.classList.add("loaded")
+    })
+</script>
+<style>
+  @keyframes loader-out-projects{
+    from{
+      height: 110vh;
+    }
+    to{
+      height: 0;
+    }
+  }
+  @keyframes loader-in-projects{
+    from{
+      height: 0;
+    }
+    to{
+      height: 120vh;
+    }
+  }
+  .loading-section.loaded{
+    animation: 750ms loader-out-projects forwards; 
+    animation-delay:500ms;
+  }
+  .loading-section.pre-loaded{
+  }
+  .loading-section{
+    animation: 750ms loader-in-projects forwards ease-out; 
+    @apply fixed inset-x-0 top-0 bg-[#2a2a2a] rounded-b-3xl z-50 h-[120vh]; 
+  }
+</style>
