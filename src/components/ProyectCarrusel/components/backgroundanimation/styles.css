@@ -1,9 +1,8 @@
 .conteiner-backgroundImage{
     display: grid; 
-    column-gap: 2rem;
     grid-template-columns: repeat(3, 1fr); 
     transform: rotate(15deg);
-    @apply h-full w-full relative -left-10 min-w-[500px] -z-20 select-none; 
+    @apply h-full w-full relative -left-10 min-w-[500px] -z-20 select-none md:gap-x-7; 
 }
 @keyframes recorrido-imagenes {
     from{
@@ -22,6 +21,7 @@
     }
 }
 .grid-images-conteiner > *{
+    padding-inline:5px;
     --timing: 500s; 
     margin-bottom: 1rem;
     row-gap: 1rem;

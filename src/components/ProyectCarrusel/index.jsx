@@ -42,7 +42,7 @@ function ProyectCarrusel() {
           </div>
         </section>
         <article className="md:h-screen w-full min-h-[75vh] flex flex-col px-2">
-          <header className="grid description-header">
+          <header className="description-header">
             <div 
             className="description-image" 
             data-transition={loader}
@@ -53,11 +53,11 @@ function ProyectCarrusel() {
             })}>
               <img
                 src={DescIcon[data.Icon]}
-                alt="React Icon"
-                className="h-full mx-auto"
+                alt=""
+                className="md:h-full aspect-square"
               />
             </div>
-            <div className="md:flex md:flex-col md:justify-start px-2">
+            <div className="md:flex md:flex-col md:justify-start">
               <h2 className="text-complementOne text-[1.5em] py-0 font-h1 md:text-[2em]">
                 0{data.id}
               </h2>
@@ -72,7 +72,7 @@ function ProyectCarrusel() {
               <img
                 src={BrandIcons.HamburgerMenuIcon}
                 alt=""
-                className="h-[50px]"
+                className="md:h-full aspect-square"
               />
             </div>
           </header>

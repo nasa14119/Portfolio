@@ -4,7 +4,7 @@ function BackgrounImageAnimation({data}) {
     return (
       <div>
         {data.map((src, i) =>(
-          <img src={src} alt="Images of the proyect" key={i + start} loading="lazy"/>
+          <img src={src} alt="Images of the proyect" key={i + start}/>
         ))}
       </div>
     );
