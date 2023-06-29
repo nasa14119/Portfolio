@@ -1,0 +1,24 @@
+---
+import BackgrounImageAnimation from "./backgroundanimation";
+import HeroImage from "./heroImage"
+---
+
+<div class="conteiner-proyectCarrusel relative">
+    <BackgrounImageAnimation client:load />
+    <HeroImage client:load/>
+</div>
+<style>
+    .conteiner-proyectCarrusel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(0, 0, 0);
+        opacity: 0.5;
+        @apply md:opacity-75;
+        transition: opacity 250ms ease-out;
+        z-index: -40;
+    }
+    .conteiner-proyectCarrusel:hover::before {
+        opacity: 0.2;
+    }
+</style>
