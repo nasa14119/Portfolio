@@ -4,25 +4,20 @@ import Controls from "./components/Controls";
 import { useEffect, useState } from "react";
 import { useMenu } from "./components/MenuProyects";
 import { useStore } from "@nanostores/react";
-import { projectIndex, loader } from "../App/projectsStore";
+import { projectIndex } from "../App/projectsStore";
+import IconDescrip from "./components/IconDescrip";
 import { Blog, PortalFamilia } from "./components/data";
 const IMPORTS = [
   PortalFamilia, 
   Blog
 ]
 function ProyectCarrusel() {
-  const DescIcon = {
-    reactIcon: BrandIcons.ReactIcon,
-    astroIcon: BrandIcons.AstroIcon,
-  };
   const $index = useStore(projectIndex); 
-  const $loader = useStore(loader); 
   const [data, setData] = useState(IMPORTS[0]); 
   useEffect(()=> {
     setData(() => IMPORTS[$index]); 
   }, [$index])
   const handleSwitch = () => {
-    loader.set(false); 
     projectIndex.set($index + 1 >= 2 ? 0 : $index + 1); 
   };
   const handleClick = (selection) => {
@@ -35,16 +30,7 @@ function ProyectCarrusel() {
   return (
       <>
         <header className="description-header">
-          <div
-            className="description-image"
-            data-transition={$loader}
-          >
-            <img
-              src={DescIcon[data.Icon]}
-              alt="Icono de Proyecto"
-              className="md:h-full aspect-square"
-            />
-          </div>
+          <IconDescrip data={data.Icon} />
           <div className="md:flex md:flex-col md:justify-start">
             <h2 className="text-complementOne text-[1.5em] py-0 font-h1 md:text-[2em]">
               0{data.id}

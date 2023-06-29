@@ -16,7 +16,12 @@
     }
 }
 [data-transition="false"]{
+    visibility: visible;
     animation: img-header 750ms forwards;
+}
+[data-transition="true"]{
+    visibility: hidden;
+    transform: scale(0.5);
 }
 .description-image{
     @apply grid place-content-center; 
