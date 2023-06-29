@@ -70,7 +70,7 @@
     @apply resize-none; 
 }
 .contact label{
-    @apply text-primary font-h1 relative pt-6; 
+    @apply text-complementOne font-h1 relative pt-6; 
 }
 .contact label > span{
     @apply absolute top-0 left-5; 

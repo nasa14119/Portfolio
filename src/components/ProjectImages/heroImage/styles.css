@@ -1,0 +1,28 @@
+.heroImage {
+    position: absolute;
+    inset:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0.5;
+    transition: opacity 250ms ease-out;
+    @apply md:opacity-100 md:hover:opacity-20; 
+}
+.heroImage img{
+    width: 80%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    @apply rounded-3xl;
+}
+@keyframes img-hero {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+[data-transition="false"]{
+    animation: 750ms img-hero forwards;
+}
