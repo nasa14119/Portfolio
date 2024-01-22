@@ -1,32 +1,29 @@
 import "./styles.css";
 import BrandIcons from "../../assets/Icons/BrandIcons";
 import Controls from "./components/Controls";
-import { useEffect, useState } from "react";
+import { ReactPropTypes, useEffect, useState } from "react";
 import { useMenu } from "./components/MenuProyects";
 import { useStore } from "@nanostores/react";
 import { projectIndex } from "../App/projectsStore";
 import IconDescrip from "./components/IconDescrip";
-import { Blog, PortalFamilia } from "./components/data";
-const IMPORTS = [
-  PortalFamilia, 
-  Blog
-]
-function ProyectCarrusel() {
+import type { IMPORTS } from "../../assets/data";
+function ProyectCarrusel({IMPORTS}:IMPORTS){
   const $index = useStore(projectIndex); 
   const [data, setData] = useState(IMPORTS[0]); 
   useEffect(()=> {
     setData(() => IMPORTS[$index]); 
   }, [$index])
   const handleSwitch = () => {
-    projectIndex.set($index + 1 >= 2 ? 0 : $index + 1); 
+    const newIndex = $index + 1 >= IMPORTS.length ? 0 : $index + 1
+    projectIndex.set(newIndex); 
   };
-  const handleClick = (selection) => {
+  const handleClick = (selection: number) => {
     projectIndex.set(selection);
   };
-  const [MenuProyects, handleClickMenu] = useMenu({
-    obj: data[$index],
-    func: handleClick,
-  });
+  // const [MenuProyects, handleClickMenu] = useMenu({
+  //   obj: data[$index],
+  //   func: handleClick,
+  // });
   return (
       <>
         <header className="description-header">
@@ -41,7 +38,7 @@ function ProyectCarrusel() {
           </div>
           <div
             className="grid place-content-center cursor-pointer"
-            onClick={handleClickMenu}
+            // onClick={handleClickMenu}
           >
             <img
               src={BrandIcons.HamburgerMenuIcon}
@@ -59,8 +56,8 @@ function ProyectCarrusel() {
           </div>
           <p>{data.descriptionText}</p>
         </main>
-        <MenuProyects />
-        <Controls code={data.links.code} demo={data.links.demo} />
+        {/* <MenuProyects /> */}
+        {/* <Controls code={data.links.code} demo={data.links.demo} /> */}
       </>
   );
 }

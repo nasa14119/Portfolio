@@ -1,7 +1,6 @@
 import { useState } from "react"
 import "./styles.css"
 import Cross from "../../../../assets/Icons/cross.svg"
-import data from "../data"
 function MenuProyects({state, handleClick, func}) {
     const [transition, setState] = useState(false); 
     if(state) return (
