@@ -1,17 +1,17 @@
 import "./styles.css";
 import BrandIcons from "../../assets/Icons/BrandIcons";
 import Controls from "./components/Controls";
-import { ReactPropTypes, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useMenu } from "./components/MenuProyects";
 import { useStore } from "@nanostores/react";
 import { projectIndex } from "../App/projectsStore";
 import IconDescrip from "./components/IconDescrip";
-import type { IMPORTS } from "../../assets/data";
+import type { IMPORTS, ImportObject } from "../../assets/data";
 function ProyectCarrusel({IMPORTS}:IMPORTS){
   const $index = useStore(projectIndex); 
-  const [data, setData] = useState(IMPORTS[0]); 
+  const [data, setData]:[data:ImportObject, setData: Function] = useState(IMPORTS[0]); 
   useEffect(()=> {
-    setData(() => IMPORTS[$index]); 
+    setData(() : ImportObject => IMPORTS[$index]); 
   }, [$index])
   const handleSwitch = () => {
     const newIndex = $index + 1 >= IMPORTS.length ? 0 : $index + 1

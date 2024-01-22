@@ -1,7 +1,8 @@
-interface ImportObject {
+import type {DescIcon} from "./const/Menu"
+export interface ImportObject {
     id: number, 
     title: string,
-    Icon: string,
+    Icon:  keyof DescIcon,
     links: {
         code: string, 
         demo: string
