@@ -28,11 +28,11 @@ function ProyectCarrusel({IMPORTS}:IMPORTS){
       <>
         <header className="description-header">
           <IconDescrip data={data.Icon} />
-          <div className="md:flex md:flex-col md:justify-start">
+          <div className="flex flex-col md:justify-start">
             <h2 className="text-complementOne text-[1.5em] py-0 font-h1 md:text-[2em]">
               0{data.id}
             </h2>
-            <h1 className="text-secundary text-[2em] md:text-[2.5em] leading-7">
+            <h1 className="text-secundary text-[1.2rem] leading-4 md:text-[2em] md:leading-[1.5rem]">
               {data.title}
             </h1>
           </div>

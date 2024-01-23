@@ -1,11 +1,12 @@
 ---
 import BackgrounImageAnimation from "./backgroundanimation";
 import HeroImage from "./heroImage"
+import {IMAGES} from "../../assets/const/Images"
 ---
 
 <div class="conteiner-proyectCarrusel relative">
     <BackgrounImageAnimation client:load />
-    <HeroImage client:load/>
+    <HeroImage client:load IMAGES={IMAGES}/>
 </div>
 <style>
     .conteiner-proyectCarrusel::before {

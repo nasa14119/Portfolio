@@ -6,7 +6,7 @@ import {PlaceHolder} from "./components/PlaceHolder";
 function BackgrounImageAnimation() {
   const {isLoading, data} = useFetchImage(); 
   
-  if (isLoading) {
+  if (data === null || isLoading) {
     return (
       <div className="overflow-hidden absolute inset-0 -z-50">
         <div className="conteiner-backgroundImage">
