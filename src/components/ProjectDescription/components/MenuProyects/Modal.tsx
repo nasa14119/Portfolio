@@ -7,19 +7,23 @@ import "./styles.css"
 export function ModalProjects({}) {
   const $modal = useStore(modal); 
   const data : Array<{id:number, title: string}> = useMemo(getTitles, []); 
-  return (<nav className="menu-proyects"data-isVisible={$modal} onClick={setModal}>
-    <ul className="relative">
+  return (
+  <nav 
+    className="menu-proyects"
+    data-isVisible={$modal} 
+    onClick={setModal}
+    >
+    <ul className="relative" onClick={e => e.stopPropagation()}>
       <div
         className="absolute top-5 right-5"
-        onClick={setModal}
-        // onClick={() => setState(() => true)}
+        onClick={e=>{e.stopPropagation(); setModal(); }}
       >
-        <img src={Cross} alt="" className="w-[40px]" />
+        <img src={Cross} alt="" className="w-[40px] cursor-pointer" />
       </div>
       {data.map((list: {id: number, title: string}) => (
         <li
           key={list.id}
-          onClick={() => { changePage(list.id - 1);}}
+          onClick={() => { changePage(list.id - 1); setModal()}}
         >
           <span>0{list.id}</span>
           <span>{list.title}</span>
