@@ -1,5 +1,5 @@
 import React, {Component, FunctionComponentElement, ReactComponentElement, useEffect, useRef, useState} from 'react'
-import Cross from "../../assets/Icons/cross.svg"
+import Cross from "@assets/Icons/cross.svg"
 import "./styles.css"
 import Confirmation from './components/Confirmation';
 import Form from './components/Form'

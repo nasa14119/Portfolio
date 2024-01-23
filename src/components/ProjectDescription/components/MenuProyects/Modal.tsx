@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import Cross from "../../../../assets/Icons/cross.svg"
+import Cross from "@assets/Icons/cross.svg"
 import { modal } from "../../../App/projectsStore.js";
 import {changePage, getTitles, setModal} from "./utils"
 import { useMemo } from "react";

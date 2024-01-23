@@ -1,4 +1,4 @@
-import Icon from "../../../../assets/Icons/BrandIcons/menu-hamburger.svg"
+import Icon from "@assets/Icons/BrandIcons/menu-hamburger.svg"
 import { setModal } from "./utils"
 export function TriggerModal() {
   return (

@@ -1,4 +1,4 @@
-import { IMPORTS } from "../../../../assets/data"
+import { IMPORTS } from "@assets/data"
 import { projectIndex } from "../../../App/projectsStore"
 import { modal } from "../../../App/projectsStore.js"
 export const changePage = (section:number) => {

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useStore } from "@nanostores/react";
 import { projectIndex } from "../App/projectsStore";
 import IconDescrip from "./components/IconDescrip";
-import type { IMPORTS, ImportObject } from "../../assets/data";
+import type { IMPORTS, ImportObject } from "@assets/data";
 import { TriggerModal } from "./components/MenuProyects/TriggerModal";
 import { ModalProjects } from "./components/MenuProyects/Modal";
 function ProyectCarrusel({IMPORTS}:IMPORTS){
