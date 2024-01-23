@@ -1,8 +1,8 @@
 .menu-proyects{
-    @apply fixed inset-0 grid place-content-center z-10; 
+    @apply fixed inset-0 place-content-center z-10; 
 }
 .menu-proyects ul{
-    @apply p-5 rounded-3xl bg-complementTwo min-h-[45vh] max-h-[60vh] overflow-y-scroll md:w-[30vw] w-[90vw]; 
+    @apply p-5 rounded-3xl bg-complementTwo min-h-[45vh] max-h-[60vh] overflow-y-scroll md:w-[40vw] w-[90vw] max-w-[750px]; 
 }
 @keyframes menu-animation{
     from {
@@ -15,17 +15,19 @@
 @keyframes menu-animation-out{
     from{
         opacity: 1;
-    }
+    }   
     to{
         opacity: 0;
+        display: none;
     }
 }
-.menu-proyects ul[data-transition="false"]{
-    animation: menu-animation 250ms ease-in forwards;
-    opacity: 1;
-}
-.menu-proyects ul[data-transition="true"]{
+.menu-proyects[data-isVisible="false"]{
     animation: menu-animation-out 250ms ease-in forwards;
+    display: none;
+}
+.menu-proyects[data-isVisible="true"]{
+    animation: menu-animation 250ms ease-in forwards;
+    display: grid;
     opacity: 1;
 }
 .menu-proyects li{

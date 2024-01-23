@@ -1,12 +1,12 @@
 import "./styles.css";
-import BrandIcons from "../../assets/Icons/BrandIcons";
 import Controls from "./components/Controls";
 import { useEffect, useState } from "react";
-import { useMenu } from "./components/MenuProyects";
 import { useStore } from "@nanostores/react";
 import { projectIndex } from "../App/projectsStore";
 import IconDescrip from "./components/IconDescrip";
 import type { IMPORTS, ImportObject } from "../../assets/data";
+import { TriggerModal } from "./components/MenuProyects/TriggerModal";
+import { ModalProjects } from "./components/MenuProyects/Modal";
 function ProyectCarrusel({IMPORTS}:IMPORTS){
   const $index = useStore(projectIndex); 
   const [data, setData]:[data:ImportObject, setData: Function] = useState(IMPORTS[0]); 
@@ -17,13 +17,6 @@ function ProyectCarrusel({IMPORTS}:IMPORTS){
     const newIndex = $index + 1 >= IMPORTS.length ? 0 : $index + 1
     projectIndex.set(newIndex); 
   };
-  const handleClick = (selection: number) => {
-    projectIndex.set(selection);
-  };
-  // const [MenuProyects, handleClickMenu] = useMenu({
-  //   obj: data[$index],
-  //   func: handleClick,
-  // });
   return (
       <>
         <header className="description-header">
@@ -36,16 +29,7 @@ function ProyectCarrusel({IMPORTS}:IMPORTS){
               {data.title}
             </h1>
           </div>
-          <div
-            className="grid place-content-center cursor-pointer"
-            // onClick={handleClickMenu}
-          >
-            <img
-              src={BrandIcons.HamburgerMenuIcon}
-              alt=""
-              className="md:h-full aspect-square"
-            />
-          </div>
+          <TriggerModal/> 
         </header>
         <main className="md:px-7 my-5">
           <div
@@ -56,8 +40,8 @@ function ProyectCarrusel({IMPORTS}:IMPORTS){
           </div>
           <p>{data.descriptionText}</p>
         </main>
-        {/* <MenuProyects /> */}
-        {/* <Controls code={data.links.code} demo={data.links.demo} /> */}
+        <Controls code={data.links.code} demo={data.links.demo} />
+        <ModalProjects />
       </>
   );
 }
