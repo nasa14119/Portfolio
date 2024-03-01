@@ -1,34 +1,25 @@
-import React, {useRef} from 'react'
 
 function Form({handleSubmit}) {
-  const email = useRef("");
-  const name = useRef("");
-  const comment= useRef("");
   return (
     <form className="contact" onSubmit={ async (e) => {
         e.preventDefault(); 
-        const isOk = await handleSubmit({
-          email: email.current, 
-          name: name.current,
-          comment: comment.current
-        }); 
+        const data = Object.fromEntries(new FormData(e.target))
+        const isOk = await handleSubmit(data); 
         if(isOk){
-          email.current = "", 
-          name.current= "", 
-          comment.current = ""
+          e.target.reset()
         }
       }}>
     <label htmlFor="email">
       <span>Email</span>
-      <input type="email" name="email" id="email" onChange={(e)=> email.current = e.target.value}/>
+      <input type="email" name="email" id="email"/>
     </label>
     <label htmlFor="name">
       <span>Name</span>
-      <input type="text" name="name" id="name" onChange={(e)=> name.current = e.target.value}/>
+      <input type="text" name="name" id="name"/>
     </label>
     <label htmlFor="comment">
       <span>Comment</span>
-      <textarea type="text" name="comment" id="comment" rows={3} onChange={(e)=> comment.current = e.target.value}/>
+      <textarea type="text" name="comment" id="comment" rows={3} />
     </label>
     <input type="submit" name="submit" id="submit" value="send" />
   </form>
