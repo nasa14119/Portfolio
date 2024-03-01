@@ -1,6 +1,5 @@
 
 export async function useSend(data) {
-    console.log(!data.name || !data.email || !data.comment); 
     let response = {
         succes : false, 
         error: ""

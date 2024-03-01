@@ -5,13 +5,18 @@ function Form({handleSubmit}) {
   const name = useRef("");
   const comment= useRef("");
   return (
-    <form className="contact" onSubmit={(e) => {
+    <form className="contact" onSubmit={ async (e) => {
         e.preventDefault(); 
-        handleSubmit({
+        const isOk = await handleSubmit({
           email: email.current, 
           name: name.current,
           comment: comment.current
         }); 
+        if(isOk){
+          email.current = "", 
+          name.current= "", 
+          comment.current = ""
+        }
       }}>
     <label htmlFor="email">
       <span>Email</span>

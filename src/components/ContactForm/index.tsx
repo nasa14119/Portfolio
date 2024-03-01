@@ -40,8 +40,10 @@ export function ContactForm( {text, classStyle } : Props){
     let response = await useSend(data); 
     if(response.succes){
       setConfirmation(() => <Confirmation confirm={true}/>); 
+      return true
     }else{
       setConfirmation(() => <Confirmation confirm={false} err={response.error}/>); 
+      return false
     }
   }
       return (

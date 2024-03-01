@@ -5,7 +5,6 @@ export const changePage = (section:number) => {
   projectIndex.set(section)
 }
 export const setModal = () =>{ 
-  console.log(modal.value);
   modal.set(!modal.get());
 } 
 type Info = Array<{title: string, id: number}> 
