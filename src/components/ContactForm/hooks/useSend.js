@@ -11,7 +11,7 @@ export async function useSend(data) {
     }
     const {name, email, comment} = data; 
     const body = {
-        service_id: "service_h11gr18",
+        service_id: "service_4jdqfjp",
         template_id: "template_s12zw09",
         user_id: "A0vD7NY0LjlirK5LM",
         template_params:{
@@ -28,7 +28,9 @@ export async function useSend(data) {
             "Content-Type": "application/json",
         },
     }).then((res)=> {
-        response.succes = true; 
+        if(res.ok){
+            response.succes = true; 
+        }
     }
     ).catch(err =>{
         response.error = err; 
