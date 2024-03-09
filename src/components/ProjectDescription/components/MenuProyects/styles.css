@@ -1,8 +1,14 @@
 .menu-proyects{
     @apply fixed inset-0 place-content-center z-10; 
 }
+.menu-proyects ul::-webkit-scrollbar{
+    display: none;
+}
 .menu-proyects ul{
-    @apply p-5 rounded-3xl bg-complementTwo min-h-[45vh] max-h-[60vh] overflow-y-scroll md:w-[40vw] w-[90vw] max-w-[600px]; 
+    scrollbar-width: none;
+}
+.menu-proyects ul{
+    @apply p-5 rounded-[1rem] bg-complementTwo min-h-[45vh] max-h-[60vh] overflow-y-scroll md:w-[40vw] w-[90vw] max-w-[600px]; 
 }
 @keyframes menu-animation{
     from {
@@ -35,7 +41,7 @@
     @apply grid text-complementOne cursor-pointer border-b-2 border-complementOne; 
 }
 .menu-proyects li:first-of-type{
-    @apply border-t-2 border-complementOne mt-14; 
+    @apply border-t-2 border-complementOne md:mt-14; 
 }
 .menu-proyects span:nth-child(1){
     display: block;
@@ -44,6 +50,5 @@
 }
 .menu-proyects span:nth-child(2){
     display: block;
-    font-size: 40px;
-    @apply font-p; 
+    @apply font-p text-3xl; 
 }
