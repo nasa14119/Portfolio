@@ -1,11 +1,61 @@
 ---
 interface Props {
-    href: string, 
-    className?: string, 
-    text?: string, 
+  href: string;
+  className?: string;
+  text?: string;
 }
-const {href , className, text} = Astro.props as Props; 
+const { href, className, text } = Astro.props as Props;
 ---
-<a href={href} class={`p-5 text-4xl text-secundary bg-complementOne rounded-[5rem] shadow-2xl ${className}`}>
-   {text || ">>>"}
+
+<a
+  href={href}
+  class={`${className} h-auto px-2 py-3 bg-complementOne w-fit md:w-1/3 flex rounded-[2.5rem] md:max-w-[135px]`}
+>
+  <span class="text-secundary flex justify-center items-center mx-auto h-10 ">
+    {
+      !text ? (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+        class="h-full md:h-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+        class="h-full md:h-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="currentColor"
+        class="h-full md:h-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+      </svg>
+      ):(
+        text
+      )
+    }
+  </span>
 </a>
