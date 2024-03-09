@@ -27,11 +27,11 @@
         display: none;
     }
 }
-.menu-proyects[data-isVisible="false"]{
+.menu-proyects[data-isvisible="false"]{
     animation: menu-animation-out 250ms ease-in forwards;
     display: none;
 }
-.menu-proyects[data-isVisible="true"]{
+.menu-proyects[data-isvisible="true"]{
     animation: menu-animation 250ms ease-in forwards;
     display: grid;
     opacity: 1;

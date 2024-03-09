@@ -7,7 +7,7 @@ export function ModalProjects({}) {
   const $modal = useStore(modal); 
   const data : Array<{id:number, title: string}> = useMemo(getTitles, []); 
   return (
-    <nav className="menu-proyects" data-isVisible={$modal} onClick={setModal}>
+    <nav className="menu-proyects" data-isvisible={$modal} onClick={setModal}>
       <ul className="relative" onClick={(e) => e.stopPropagation()}>
         <div
           className="absolute top-5 right-5 text-complementOne h-10 w-10 hidden md:block"
