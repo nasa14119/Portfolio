@@ -7,7 +7,7 @@
     inset: 0; 
 }
 #submit{
-    @apply bg-complementTwo font-h1 text-[32px] my-2 cursor-pointer text-complementOne; 
+    @apply bg-complementTwo font-h1 text-[32px] my-2 cursor-pointer text-primary; 
 }
 .container-contact *{
     opacity: 0; 
@@ -61,7 +61,7 @@
 }
 .contact-cross{
     position: absolute; 
-    @apply right-5 top-5 w-16 aspect-square fill-secundary md:right-14; 
+    @apply right-5 top-5 w-14 aspect-square fill-secundary md:right-14; 
 }
 .contact input, .contact textarea{
     @apply p-5 outline-none rounded-lg bg-[transparent] border-solid border-2 border-primary font-p w-full text-complementary ; 
@@ -70,10 +70,10 @@
     @apply resize-none; 
 }
 .contact label{
-    @apply text-complementOne font-h1 relative pt-6; 
+    @apply text-complementTwo font-h1 relative pt-10; 
 }
 .contact label > span{
-    @apply absolute top-0 left-5; 
+    @apply absolute -top-0 left-0; 
 }
 @keyframes confirmation-animation{
     from{
