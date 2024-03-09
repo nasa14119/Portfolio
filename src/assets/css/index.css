@@ -15,7 +15,7 @@ html{
     --secundary: #CF5C36;
     --complementary:#FFFFFF;
     --complementOne: #FFB20F; 
-    --complementTwo:#61988E; 
+    --complementTwo:#D04242; 
 }
 h1{
     font-family: var(--primary-font);
