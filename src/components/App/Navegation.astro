@@ -2,14 +2,14 @@
 import { ContactForm as Form } from "../ContactForm";
 const {textLogo = "Nas"} = Astro.props
 ---
-<nav class="flex items-center px-4 md:text-complementOne absolute top-5 inset-x-0 justify-between z-10">
-    <span class="font-h1 md:font-p py-5 text-2xl md:py-4 md:hover:text-secundary">
+<nav class="flex items-baseline justify-between md:justify-between px-4 md:px-6 py-2 md:text-complementOne absolute top-5 inset-x-0 z-10">
+    <span class="font-h1 md:font-p text-2xl md:py-4 md:hover:text-secundary">
         <a href="/" aria-label={textLogo}>
             {textLogo}
         </a>
     </span>
     <span>
-        <ul class="flex gap-x-5 font-p md:text-lg cursor-pointer">
+        <ul class="justify-self-end w-full gap-x-2 flex justify-between md:gap-x-5 font-p md:text-lg cursor-pointer">
             <li class="md:hover:text-complementary min-w-[2rem]">
                 <a href="/" aria-label="Home">
                     Home
