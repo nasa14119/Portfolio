@@ -5,12 +5,12 @@ import Navegation from "@components/App/Navegation.astro";
 ---
 
 <Default>
-  <header class="h-screen w-screen relative flex justify-center items-center">
+  <header class="h-screen w-screen relative flex justify-center items-center max-h-screen overflow-hidden">
     <Navegation/>
     <div class="absolute inset-0 -z-50 before:absolute before:inset-0 before:bg-primary before:-z-40 before:opacity-40">
       <img src={HeroBlog} alt="" class="relative w-auto h-full md:w-full md:h-auto object-cover aspect-video mx-auto -z-50">
     </div>
-    <h1 class="text-[20vw] md:text-[225px] animate-slide-in-top animate-delay-500">
+    <h1 class="text-[20vw] md:text-[225px] animate-fade-in-down animate-delay-500 animate-duration-[800ms] select-none">
       Blog
     </h1>
   </header>
