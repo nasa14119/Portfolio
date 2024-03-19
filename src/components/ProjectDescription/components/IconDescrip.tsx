@@ -13,7 +13,7 @@ function IconDescrip({data}: {data:keyof DescIcon}) {
   return (
     <div className="description-image" data-transition={isLoadingIcon}>
       <img
-        src={DescIcon[data]}
+        src={DescIcon[data].src}
         alt="Icono de Proyecto"
         className="md:h-full aspect-square"
       />

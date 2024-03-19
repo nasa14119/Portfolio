@@ -7,7 +7,7 @@ export function TriggerModal() {
     onClick={setModal}
   >
     <img
-      src={Icon}
+      src={Icon.src}
       alt="Menu para escojer un projecto"
       className="md:h-full aspect-square"
     />

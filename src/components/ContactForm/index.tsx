@@ -1,10 +1,9 @@
-import React, {Component, FunctionComponentElement, ReactComponentElement, useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Cross from "@assets/Icons/cross.svg"
 import "./styles.css"
 import Confirmation from './components/Confirmation';
 import Form from './components/Form'
 import {useSend} from './hooks/useSend';
-import type { JSXTransformFn } from 'astro';
 interface Props {
   text: string, 
   classStyle :string
@@ -53,7 +52,7 @@ export function ContactForm( {text, classStyle } : Props){
           </span>
           <div className="container-contact" data-inview={transitions}>
             <span className="contact-cross" onClick={handleClick}>
-              <img src={Cross} alt="cross" />
+              <img src={Cross.src} alt="cross" />
             </span>
             <Form handleSubmit={handleSubmit}/>
             <div className='flex justify-center'>

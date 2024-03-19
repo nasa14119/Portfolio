@@ -4,15 +4,15 @@ import {HeroUnsplash, getGalleryImages} from "../img/ExampleImages/Galeria"
 export type IMAGES = Array<{Hero:string, Background: Array<string>}>
 export const IMAGES : IMAGES = [
   {
-    Hero: HeroPortalFamilia, 
+    Hero: HeroPortalFamilia.src, 
     Background: await getImagesPortalFamilia() 
   }, 
   {
-    Hero: HeroBlog, 
+    Hero: HeroBlog.src, 
     Background: await getImagesBlog() 
   }, 
   {
-    Hero: HeroUnsplash, 
+    Hero: HeroUnsplash.src, 
     Background: await getGalleryImages()
   }, 
 ]

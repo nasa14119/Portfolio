@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
 import Default from "src/layouts/Default.astro";
-import HeroImage from "@assets/img/HeroBlog.jpeg"
 import Navegation from "@components/App/Navegation.astro";
 ---
 
@@ -9,8 +7,8 @@ import Navegation from "@components/App/Navegation.astro";
   <header class="h-screen w-screen relative flex justify-center items-center max-h-screen overflow-hidden">
     <Navegation/>
     <div class="absolute inset-0 -z-50 before:absolute before:inset-0 before:bg-primary before:-z-40 before:opacity-40">
-      <Image src={HeroImage} alt="" class="relative w-auto h-full md:w-full md:h-auto object-cover aspect-video mx-auto -z-50"/>
-      <!-- <img src={HeroBlog} alt="" class="relative w-auto h-full md:w-full md:h-auto object-cover aspect-video mx-auto -z-50"> -->
+      <!-- <Image src={HeroImage} alt="" class="relative w-auto h-full md:w-full md:h-auto object-cover aspect-video mx-auto -z-50"/> -->
+      <!-- <img src="../../assets/img/HeroBlog.jpeg" alt="" class="relative w-auto h-full md:w-full md:h-auto object-cover aspect-video mx-auto -z-50"> -->
     </div>
     <h1 class="text-[20vw] md:text-[225px] animate-fade-in-down animate-delay-500 animate-duration-[800ms] select-none">
       Blog
