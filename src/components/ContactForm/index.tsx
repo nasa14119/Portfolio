@@ -52,7 +52,7 @@ export function ContactForm( {text, classStyle } : Props){
           </span>
           <div className="container-contact" data-inview={transitions}>
             <span className="contact-cross" onClick={handleClick}>
-              <img src={Cross.src} alt="cross" />
+              <img src={Cross.src} alt="cross" loading='lazy'/>
             </span>
             <Form handleSubmit={handleSubmit}/>
             <div className='flex justify-center'>
