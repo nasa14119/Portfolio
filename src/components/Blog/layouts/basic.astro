@@ -1,10 +1,10 @@
 ---
 const { frontmatter } = Astro.props;
 import "@assets/css/index.css";
-import "../assets/default.css";
-import Default from "src/layouts/Default.astro";
+import "@blog/assets/default.css";
 import Nav from "../components/Nav.astro";
 import Hr from "../components/Hr.astro";
+import Default from "@layouts/Default.astro"
 function getDate() {
   const today = new Date();
   const yyyy = today.getFullYear();
@@ -15,8 +15,7 @@ function getDate() {
   return `${formatDay} / ${formatMonth} / ${yyyy}`;
 }
 ---
-
-<Default title={frontmatter.title}>
+<Default title={frontmatter.title || "Post"}>
   <Nav />
   <div class="md:grid">
     <section class="md:max-w-lg rounded-3xl md:mx-auto">
