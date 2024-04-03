@@ -1,9 +1,10 @@
 ---
   layout: "@blog/layouts/basic.astro"
-  title: "Portal Familias"
-  # date: "02/03/2024"
+  title: "Test"
+  date: "02/03/2024"
   id: "post-1"
-  heroImage: "/ImgBlog/HeroPortalFamilia.png"
+  # heroImage: "/ImgBlog/HeroPortalFamilia.png"
+  heroImage: "https://picsum.photos/seed/picsum/1920/1080"
   categories: ["react"]
 ---
 

@@ -4,18 +4,10 @@ import Image from "astro/components/Image.astro";
 import Navegation from "@components/App/Navegation.astro";
 import HeroImage from "@assets/img/HeroBlog.jpeg";
 import HeroImageSkeleton from "@assets/img/HeroBlogSkeleton.jpg";
-import PreviewArticle from "@components/Blog/components/PreviewArticle.astro";
-type article = {
-  title: string;
-  id: string;
-  heroImage: string;
-  categories: string[];
-};
-const articles = await Astro.glob("./*.md");
 ---
 
 <Default>
-  <header
+  <main
     class="h-screen w-screen relative flex justify-center items-center max-h-screen overflow-hidden"
   >
     <Navegation />
@@ -38,28 +30,7 @@ const articles = await Astro.glob("./*.md");
     <h1
       class="text-[20vw] md:text-[225px] animate-fade-in-down animate-delay-500 animate-duration-[800ms] select-none"
     >
-      Blog
+      404
     </h1>
-  </header>
-  <main>
-    <h2 class="text-[10vw] py-2 px-5 font-h1 text-complementOne">Articles</h2>
-    <section class="grid-articles">
-      {
-        articles.map((article) => (
-          <PreviewArticle
-            date={article.frontmatter.date ?? "not set"}
-            hashtags={article.frontmatter.categories}
-            link={article.url ?? "#"}
-            title={article.frontmatter.title}
-            img={article.frontmatter.heroImage}
-          />
-        ))
-      }
-    </section>
   </main>
 </Default>
-<style>
-  .grid-articles{
-    @apply grid grid-cols-1 md:grid-cols-3 px-5
-  }
-</style>

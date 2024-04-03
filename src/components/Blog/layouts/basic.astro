@@ -23,10 +23,16 @@ function getDate() {
         class="w-full h-60 rounded-b-3xl overflow-hidden relative text-white"
         id="top"
       >
+        <img
+          src={frontmatter.heroImage ||
+            "https://picsum.photos/500/250?random=3"}
+          alt="computer"
+          class="min-h-full object-cover min-w-full cover -z-50"
+        />
         <div
           class="absolute inset-0 flex justify-center items-center bg-black/40"
         >
-          <h1 class="bg-complementOne px-2 text-3xl bg-neutral-700">
+          <h1 class="px-4 py-2 text-3xl bg-neutral-700/30">
             {frontmatter.title || "Title"}
           </h1>
         </div>
@@ -44,12 +50,6 @@ function getDate() {
             }
           </ul>
         </div>
-        <img
-          src={frontmatter.heroImage ||
-            "https://picsum.photos/500/250?random=3"}
-          alt="computer"
-          class="min-h-full object-cover min-w-full"
-        />
       </header>
       <Hr color="transparent" />
       <main class="rounded-3xl p-5 bg-[#202020]">
@@ -91,10 +91,10 @@ function getDate() {
       opacity: 1;
     }
   }
-  section header {
+  section header .cover{
     opacity: 0;
     animation: imageLoad 1s forwards;
-    animation-delay: 2s;
+    animation-delay: 750ms;
   }
 </style>
 <style is:global>
