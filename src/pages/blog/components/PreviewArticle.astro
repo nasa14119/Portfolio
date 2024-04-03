@@ -1,5 +1,5 @@
 ---
-import img_computer from "../assets/images/blog/computer.jpg"; 
+const img_default = "https://picsum.photos/1920/1080.webp"; 
 interface Props {
     link:string;
     title: string;
@@ -7,7 +7,7 @@ interface Props {
     hashtags:string[];
     img?: string;
 }
-const {link, title, hashtags, img, date = img_computer} = Astro.props; 
+const {link, title, hashtags, img, date = img_default} = Astro.props; 
 ---
 <a href={link}>
 <div class="rounded-3xl overflow-hidden before:bg-black/70 before:absolute relative before:inset-0 h-60 before:z-50 text-white  m-4 min-w-[250px]">
