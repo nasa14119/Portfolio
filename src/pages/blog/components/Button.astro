@@ -1,0 +1,24 @@
+---
+    interface Props{
+        type ?: "button" | "reset" | "submit" , 
+        id: string, 
+        body: string, 
+        extraStyles?: string[]
+    }
+    const {type = "button", id, body, extraStyles}  = Astro.props as Props
+---
+<button type={type} id={id} class:list={["my_btn", extraStyles]}>
+    {body}
+</button>
+<style>
+    .my_btn{
+        font-size: 16px;
+        padding-inline: 1.5rem;
+        padding-block: 0.5rem;
+        font-family: var(--bold);
+        border-radius: 1rem;
+        color: #fff; 
+        text-transform: capitalize;
+        background-color: var(--theme-primary); 
+    }
+</style>

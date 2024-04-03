@@ -1,0 +1,23 @@
+:root{
+  --theme-primary:#f4a460;  
+  --p: "Lato 300"; 
+  --embrace: "Lato"; 
+  --bold: "Lato bold"; 
+  --h1: "Roboto Serif"; 
+  --header: "Roboto 600";
+  --background: #eadede;  
+  --background-grey:#f2f2f2; 
+  --grey: #8a8a8a;
+  --grey-blue: #edf1f3;  
+}
+h1{
+  color: var(--complementOne); 
+  font-size: 2.5em;
+  /* font-family: var(--h1); */
+}
+em, i{
+  font-weight: 600;
+}
+h2{
+  font-size: 1.5em;
+}

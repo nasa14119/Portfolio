@@ -1,0 +1,20 @@
+---
+interface Props{
+    fixed ?: boolean
+}
+const {fixed = true} = Astro.props as Props; 
+---
+<script>
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    let div :HTMLDivElement = document.querySelector("#go-top-div");
+    window.onscroll = () => {
+        document.body.scrollTop >= 20 || document.documentElement.scrollTop <= 23 ? div.classList.add("hidden") : div.classList.remove("hidden"); 
+    };
+    div.onclick = topFunction; 
+</script>
+<div class="absolute right-5 bottom-5 cursor-pointer px-2 hidden" id="go-top-div">
+    <i class="fa-solid fa-chevron-up"></i>
+</div>

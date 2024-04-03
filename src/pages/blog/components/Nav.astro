@@ -1,0 +1,103 @@
+<nav>
+  <div class="md:hidden">
+    <script>
+      function handleClick() {
+        const Elements: NodeListOf<HTMLDivElement> =
+          document.querySelectorAll("[data-isOpen]");
+        state = !state;
+        Elements.forEach((element) => {
+          element.dataset.isopen = state.toString();
+        });
+        if (state) {
+          document.addEventListener(
+            "mouseup",
+            (e: any) => {
+              !div?.contains(e.target) && handleClick();
+            },
+            { once: true }
+          );
+        }
+      }
+      let state = false;
+      const div = document.querySelector("#toggle_nav");
+      div?.addEventListener("click", () => {
+        handleClick();
+      });
+    </script>
+    <div id="toggle_nav" data-isOpen="false" class="cursor-pointer">
+      <span data-isOpen="false"></span>
+    </div>
+    <ul data-isOpen="false" id="thing" class="mobile">
+      <li>
+        <a href="/"> Home </a>
+      </li>
+      <li>
+        <a href="/blog"> Blog </a>
+      </li>
+      <li>
+        <a href="/proyects"> Proyectos </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="hidden fixed top-2 left-0 z-50 py-2 font-em text-[10px] w-max bg-black/60 text-white rounded-r-md md:block"
+  >
+    <ul class="flex mx-5 gap-x-5 justify-end">
+      <li class="hover:text-neutral-400">
+        <a href="/"> Home </a>
+      </li>
+      <li class="hover:text-neutral-400">
+        <a href="/blog"> Blog </a>
+      </li>
+      <li class="hover:text-neutral-400">
+        <a href="/proyects"> Proyectos </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<style>
+  #toggle_nav {
+    @apply rounded-md bg-black/40 fixed left-4 w-11 h-10 z-40 grid place-items-center;
+  }
+  ul.mobile {
+    transition: all 250ms;
+    @apply invisible rounded-md bg-black fixed top-16 w-40 text-center text-white flex flex-col justify-between h-0 opacity-0 gap-y-5;
+  }
+  nav {
+    @apply fixed top-5 left-5 z-50 select-none;
+  }
+  ul[data-isOpen="true"] {
+    transition: all 750ms;
+    @apply visible h-fit opacity-100;
+  }
+  span {
+    transition: all 50ms linear;
+    @apply block w-5 h-[2px] bg-white px-3 rounded-md absolute top-5;
+  }
+  span::before {
+    transition: all 200ms ease-in;
+    content: "";
+    @apply block w-full h-[2px] bg-white px-3 rounded-md absolute left-0 -top-2;
+  }
+  span::after {
+    transition: all 200ms ease-in;
+    content: "";
+    @apply block w-full h-[2px] bg-white px-3 rounded-md absolute right-0 top-2;
+  }
+  span[data-isOpen="true"] {
+    @apply bg-transparent;
+  }
+  span[data-isOpen="true"]::before {
+    @apply block w-full h-[2px] bg-white px-3 rounded-md rotate-45 absolute left-0 top-0;
+  }
+  span[data-isOpen="true"]::after {
+    content: "";
+    @apply block w-full h-[2px] bg-white px-3 rounded-md -rotate-45 absolute right-0 top-0;
+  }
+  li {
+    @apply cursor-pointer;
+  }
+  a:hover {
+    @apply text-gray-200;
+  }
+</style>

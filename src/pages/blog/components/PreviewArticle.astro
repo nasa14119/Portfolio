@@ -1,0 +1,28 @@
+---
+import img_computer from "../assets/images/blog/computer.jpg"; 
+interface Props {
+    link:string;
+    title: string;
+    date: string;
+    hashtags:string[];
+    img?: string;
+}
+const {link, title, hashtags, img, date = img_computer} = Astro.props; 
+---
+<a href={link}>
+<div class="rounded-3xl overflow-hidden before:bg-black/70 before:absolute relative before:inset-0 h-60 before:z-50 text-white  m-4 min-w-[250px]">
+        <div class="absolute left-0 z-50 p-5 bottom-10 font-em text-lg">{title}</div>
+        <div class="absolute left-0 z-50 p-5 bottom-6 text-[12px]">{date}</div>
+        <div class="absolute left-0 z-50 p-5 bottom-2 font-p text-[10px] ml-2">
+            <ul class="flex items-center gap-x-4 text-xs list-['#'] flex-wrap">
+                {
+                    hashtags?.map( (ele: string) =>(
+                        <li class="">{ele} </li>
+                    )
+                    )
+                }
+            </ul>
+        </div>
+        <img src={img} alt="hero_image" class="min-h-full object-cover min-w-full absolute inset-0 z-10">
+    </div>
+</a>

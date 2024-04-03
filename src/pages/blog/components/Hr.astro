@@ -1,0 +1,18 @@
+---
+const {color} = Astro.props
+---
+<div class="hr-styles relative">
+</div>
+<style define:vars={{color}}>
+    .hr-styles{
+    @apply bg-[var(--color)] w-full h-10 -z-50 ;  
+    }
+    .hr-styles::before{
+        content: "";
+        @apply bg-[var(--color)] h-5 w-full absolute -top-5; 
+    }
+    .hr-styles::after{
+        content: "";
+        @apply bg-[var(--color)] h-5 w-full absolute -bottom-5; 
+    }
+</style>
