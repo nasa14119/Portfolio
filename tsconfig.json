@@ -7,7 +7,9 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
-      "@blogimg/*": ["src/pages/blog/assets/img/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@blogimg/*": ["src/components/Blog/assets/img/*"], 
+      "@blog/*":["src/components/Blog/*"]
     }
   }
 }

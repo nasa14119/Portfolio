@@ -1,5 +1,5 @@
 ---
-  layout: "./layouts/basic.astro"
+  layout: "@blog/layouts/basic.astro"
   title: "Portal Familias"
   # date: "02/03/2024"
   id: "post-1"
