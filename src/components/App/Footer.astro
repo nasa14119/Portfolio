@@ -44,27 +44,27 @@ const {style = ""} = Astro.props;
 <style>
     footer {
         grid-area: footer;
-        @apply bg-gradient-to-b  from-[#717171] to-80% from-10% py-20 relative  md:from-[transparent] md:bg-complementary  md:rounded-lg rounded-tl-3xl rounded-tr-3xl mt-10;
+        @apply bg-white text-secundary py-20 relative md:bg-complementary  md:rounded-lg rounded-tl-3xl rounded-tr-3xl mt-10;
     }
 </style>
 <style is:global>
     .social-icons {
-        @apply flex flex-col justify-evenly md:flex-row md:justify-center  md:text-complementTwo md:items-center gap-y-10 w-[50%] mx-auto;
+        @apply flex flex-col justify-evenly md:flex-row md:justify-center  md:text-complementTwo md:items-center gap-y-10 w-[50%] mx-5 md:mx-auto;
     }
     .social-icons li {
         @apply cursor-pointer flex items-center gap-x-5 md:gap-x-0 md:ml-0 md:p-5;
     }
     .social-icons li #email-icon g {
-        @apply stroke-complementary hover:stroke-secundary md:stroke-complementTwo !fill-[transparent];
+        @apply stroke-complementTwo hover:stroke-secundary md:stroke-complementTwo !fill-[transparent];
     }
     .social-icons li:hover svg#email-icon g {
-        @apply stroke-secundary;
+        @apply stroke-complementTwo;
     }
     .social-icons li:hover g {
-        @apply fill-secundary;
+        @apply fill-complementTwo;
     }
     .social-icons li g {
-        @apply fill-complementary  md:fill-complementTwo;
+        @apply fill-complementTwo  md:fill-complementTwo;
     }
     .social-icons li svg:not(#email-icon) {
         @apply aspect-square h-14 md:h-10;
