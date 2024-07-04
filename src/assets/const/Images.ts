@@ -4,7 +4,7 @@ import {HeroUnsplash, getGalleryImages} from "../img/ExampleImages/Galeria"
 export type IMAGES = Array<{Hero:string, Background: Array<string>}>
 export const IMAGES : IMAGES = [
   {
-    Hero: HeroPortalFamilia.src, 
+    Hero: "/HeroPortalFamilia.png", 
     Background: await getImagesPortalFamilia() 
   }, 
   {
