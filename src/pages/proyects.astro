@@ -10,7 +10,7 @@ import {IMPORTS} from "@assets/data"
   <Nav textLogo="Projects"/>
   <main class="relative">
     <ProjectImages/>
-    <article class="md:h-screen w-full min-h-[75vh] flex flex-col px-2">
+    <article class="w-full min-h-[75vh] flex flex-col px-2">
       <ProjectDescription client:load IMPORTS={IMPORTS}/>
     </article>
   </main>
@@ -18,22 +18,34 @@ import {IMPORTS} from "@assets/data"
 </ProjectsPage>
 <style>
   main {
-    width: calc(100% - 4rem);
+    box-sizing: border-box;
+    padding: 0;
+    padding-inline: 2rem;
+    padding-top: 5rem;
     display: grid;
-    margin-top: 20vh;
     margin-inline:auto;
     grid-template-columns: 100%;
     grid-template-rows: minmax(75vh, 1fr) minmax(50vh, max-content) ; 
+    @apply gap-y-4 md:gap-0; 
   }
   @media (min-width: 769px){
     main {
-      width: calc(100% - 4rem);
-      display: grid;
-      margin-top: 20vh;
-      column-gap: 2rem;
-      margin-inline:auto;
+      margin: 0; 
+      padding-top: 10%;
+      padding-inline: 1.5rem;
+      width: 100%;
+      min-height: 100vh;
       grid-template-columns: 50% 1fr;
       grid-template-rows: minmax(85vh, 1fr);
+    }
+    main > * {
+      max-width: 600px;
+      margin-inline: auto;
+    }
+  }
+  @media (min-width: 1024px){
+    main {
+      padding-block: 5%;
     }
   }
 </style>

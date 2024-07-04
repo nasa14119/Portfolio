@@ -3,6 +3,7 @@
     width: 100%;
     column-gap:10px;
     display: grid;
+    min-height: 5rem;
     grid-template-columns: 20% 1fr 20%;
     /* grid-template-rows: max(20vh, 20%); */
     @apply md:grid-cols-3 md:grid-rows-1; 
