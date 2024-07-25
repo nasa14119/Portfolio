@@ -1,4 +1,4 @@
-import HeroImage from "./HeroPortalFamilia.png"
+import HeroImage from "./HeroPortalFamiliaProyect.png"
 
 export const getImagesPortalFamilia = async ():Promise<string[]> => {
   const result = Array(11); 
