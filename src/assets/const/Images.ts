@@ -1,10 +1,10 @@
 import {HeroBlog, getImagesBlog} from "../../../public/ExampleImages/BlogAstro"
-import {HeroPortalFamilia, getImagesPortalFamilia} from "../../../public/ExampleImages/PortalFamilia"
+import { getImagesPortalFamilia} from "../../../public/ExampleImages/PortalFamilia"
 import {HeroUnsplash, getGalleryImages} from "../../../public/ExampleImages/Galeria"
 export type IMAGES = Array<{Hero:string, Background: Array<string>}>
 export const IMAGES : IMAGES = [
   {
-    Hero:HeroPortalFamilia.src, 
+    Hero:"/ExampleImages/PortalFamilia/HeroPortalFamiliaProyect.png", 
     Background: await getImagesPortalFamilia() 
   }, 
   {
