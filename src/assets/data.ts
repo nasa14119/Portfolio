@@ -40,7 +40,7 @@ const UnsplashGallery:ImportObject  = {
     Icon: "reactIcon",
     links: {
         code: "https://github.com/nasa14119/FullStack-Gallery/", 
-        demo: "https://fullstack-gallery-client.onrender.com/"
+        demo: "https://fullstack-gallery.onrender.com/"
     }, 
     descriptionText: `One of my favorite pages. Showcasing full stack skills, MERN stack is a page that lets you save link to images in a good interface, whit inifnite scroll. What you can do whit it is save thouse images in unsplash you whant to save for later proyects`
 }
