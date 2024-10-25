@@ -1,20 +1,52 @@
 ---
-import "@assets/css/index.css"
-const {desc, title} = Astro.props; 
+import "@assets/css/index.css";
+const { desc, title } = Astro.props;
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={desc}>
-		<meta name="theme-color" content="var(--primary)">
+  <head>
+    <slot name="preload" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={desc} />
+    <meta name="theme-color" content="var(--primary)" />
+    <!-- HTML Meta Tags -->
+    <meta name="description" content="This is the home page of the portfolio" />
 
-		<title>Porfolio{title && ` | ${title}`}</title>
-	</head>
-	<body>
-			<slot /> 
-	</body>
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://nicolas-amaya.onrender.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nicolas Amaya" />
+    <meta
+      property="og:description"
+      content="This is the home page of the portfolio"
+    />
+    <meta
+      property="og:image"
+      content="https://nicolas-amaya.onrender.com/preview-og.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="nicolas-amaya.onrender.com" />
+    <meta
+      property="twitter:url"
+      content="https://nicolas-amaya.onrender.com/"
+    />
+    <meta name="twitter:title" content="Nicolas Amaya" />
+    <meta
+      name="twitter:description"
+      content="This is the home page of the portfolio"
+    />
+    <meta
+      name="twitter:image"
+      content="https://nicolas-amaya.onrender.com/preview-og.png"
+    />
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <title>Porfolio{title && ` | ${title}`}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>

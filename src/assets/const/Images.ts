@@ -1,18 +1,39 @@
-import {HeroBlog, getImagesBlog} from "../../../public/ExampleImages/BlogAstro"
-import { getImagesPortalFamilia} from "../../../public/ExampleImages/PortalFamilia"
-import {HeroUnsplash, getGalleryImages} from "../../../public/ExampleImages/Galeria"
-export type IMAGES = Array<{Hero:string, Background: Array<string>}>
-export const IMAGES : IMAGES = [
+export type IMAGES = Array<{
+  heroImage: string;
+  getImages: () => string[];
+}>;
+const parseURL = (glob: any) => () => {
+  const keys = Object.keys(glob()).map((key) => key.replace("public/", ""));
+  const urls = keys.map((key) => new URL(key, import.meta.url).href);
+  return urls;
+};
+const heroImageURL = (path: string) => new URL(path, import.meta.url).href;
+export const IMAGES: IMAGES = [
   {
-    Hero:"/ExampleImages/PortalFamilia/HeroPortalFamiliaProyect.png", 
-    Background: await getImagesPortalFamilia() 
-  }, 
+    heroImage: heroImageURL("/ExampleImages/PortalFamilia/HeroImage.png"),
+    getImages: parseURL(() =>
+      import.meta.glob([
+        "public/ExampleImages/PortalFamilia/*.png",
+        "!**/HeroImage.png",
+      ])
+    ),
+  },
   {
-    Hero: HeroBlog.src, 
-    Background: await getImagesBlog() 
-  }, 
+    heroImage: heroImageURL("/ExampleImages/BlogAstro/HeroImage.png"),
+    getImages: parseURL(() =>
+      import.meta.glob([
+        "public/ExampleImages/BlogAstro/*.png",
+        "!**/HeroImage.png",
+      ])
+    ),
+  },
   {
-    Hero: HeroUnsplash.src, 
-    Background: await getGalleryImages()
-  }, 
-]
+    heroImage: heroImageURL("/ExampleImages/Galeria/HeroImage.png"),
+    getImages: parseURL(() =>
+      import.meta.glob([
+        "public/ExampleImages/Galeria/*.png",
+        "!**/HeroImage.png",
+      ])
+    ),
+  },
+];
