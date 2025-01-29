@@ -1,18 +1,45 @@
-import {HeroBlog, getImagesBlog} from "../../../public/ExampleImages/BlogAstro"
-import { getImagesPortalFamilia} from "../../../public/ExampleImages/PortalFamilia"
-import {HeroUnsplash, getGalleryImages} from "../../../public/ExampleImages/Galeria"
-export type IMAGES = Array<{Hero:string, Background: Array<string>}>
-export const IMAGES : IMAGES = [
+export type IMAGES = Array<{
+  heroImage: () => Record<string, () => Promise<string>>;
+  getImages: () => Record<string, () => Promise<string>>;
+}>;
+export const IMAGES = [
   {
-    Hero:"/ExampleImages/PortalFamilia/HeroPortalFamiliaProyect.png", 
-    Background: await getImagesPortalFamilia() 
-  }, 
+    heroImage: () =>
+      import.meta.glob(["public/ExampleImages/PortalFamilia/HeroImage.png"], {
+        import: "default",
+      }),
+    getImages: () =>
+      import.meta.glob(
+        ["public/ExampleImages/PortalFamilia/*.png", "!**/HeroImage.png"],
+        {
+          import: "default",
+        }
+      ),
+  },
   {
-    Hero: HeroBlog.src, 
-    Background: await getImagesBlog() 
-  }, 
+    heroImage: () =>
+      import.meta.glob(["public/ExampleImages/BlogAstro/HeroImage.png"], {
+        import: "default",
+      }),
+    getImages: () =>
+      import.meta.glob(
+        ["public/ExampleImages/BlogAstro/*.png", "!**/HeroImage.png"],
+        {
+          import: "default",
+        }
+      ),
+  },
   {
-    Hero: HeroUnsplash.src, 
-    Background: await getGalleryImages()
-  }, 
-]
+    heroImage: () =>
+      import.meta.glob(["public/ExampleImages/Galeria/HeroImage.png"], {
+        import: "default",
+      }),
+    getImages: () =>
+      import.meta.glob(
+        ["public/ExampleImages/Galeria/*.png", "!**/HeroImage.png"],
+        {
+          import: "default",
+        }
+      ),
+  },
+] as IMAGES;
