@@ -1,23 +1,24 @@
 ---
 import BackgrounImageAnimation from "./backgroundanimation";
-import HeroImage from "./heroImage";
+import HeroImage from "./heroImage"
+import {IMAGES} from "@assets/const/Images"
 ---
 
 <div class="conteiner-proyectCarrusel relative w-full h-full">
-  <BackgrounImageAnimation client:load />
-  <HeroImage client:load />
+    <BackgrounImageAnimation client:load />
+    <HeroImage client:load IMAGES={IMAGES}/>
 </div>
 <style>
-  .conteiner-proyectCarrusel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-    @apply md:opacity-75;
-    transition: opacity 250ms ease-out;
-    z-index: -40;
-  }
-  .conteiner-proyectCarrusel:hover::before {
-    opacity: 0.2;
-  }
+    .conteiner-proyectCarrusel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        @apply md:opacity-75;
+        transition: opacity 250ms ease-out;
+        z-index: -40;
+    }
+    .conteiner-proyectCarrusel:hover::before {
+        opacity: 0.2;
+    }
 </style>
