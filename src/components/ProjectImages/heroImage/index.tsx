@@ -7,10 +7,10 @@ import { IMAGES } from "@assets/const/Images.ts";
 
 function heroImage() {
   const $index = useStore(projectIndex);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   const [src, setSrc] = useState<string>("");
   useEffect(() => {
-    setLoading(() => true);
+    let isShouldChage = true;
     const { heroImage } = IMAGES[$index];
     if (!heroImage) return;
     const preload = () => {
@@ -21,11 +21,18 @@ function heroImage() {
         img.onload = () => res(src);
         img.src = src;
       })
-        .then((v) => setSrc(v))
+        .then((v) => {
+          if (isShouldChage) {
+            setSrc(v);
+            return;
+          }
+          setLoading(true);
+        })
         .finally(() => setLoading(false));
     };
     preload();
     return () => {
+      isShouldChage = false;
       setLoading(true);
     };
   }, [$index]);
@@ -34,7 +41,7 @@ function heroImage() {
       {isLoading && (
         <span className="loader z-50 bg-[#a9a9a9]/30 animate-duration-[11s] animate-pulse"></span>
       )}
-      {!isLoading && (
+      {!isLoading && src && (
         <img src={src} alt="Hero Image" data-transition={isLoading} />
       )}
     </div>
