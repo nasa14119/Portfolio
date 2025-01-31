@@ -9,7 +9,8 @@
   transition: opacity 250ms ease-out;
   @apply md:opacity-100 md:hover:opacity-20;
 }
-.heroImage img {
+.heroImage img,
+.loader {
   width: 80%;
   aspect-ratio: 1/1;
   object-fit: cover;

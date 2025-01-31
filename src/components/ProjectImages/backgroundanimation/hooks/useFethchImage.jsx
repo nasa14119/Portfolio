@@ -7,6 +7,7 @@ export function useFetchImage() {
   const [data, setData] = useState(null);
   const $index = useStore(projectIndex);
   useEffect(() => {
+    let shouldupdate = true;
     setLoading(() => true);
     const fetchImages = async () => {
       const { getImages } = IMAGES[$index];
@@ -22,10 +23,16 @@ export function useFetchImage() {
         });
       });
       await Promise.all(images);
-      setData(sources);
+      if (shouldupdate) {
+        setData(() => sources);
+      }
       setLoading(false);
     };
     fetchImages();
+    return () => {
+      shouldupdate = false;
+      setData(null);
+    };
   }, [$index]);
   return { isLoading: loading, data };
 }
