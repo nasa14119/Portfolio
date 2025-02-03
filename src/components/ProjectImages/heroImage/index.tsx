@@ -3,7 +3,6 @@ import "./styles.css";
 import { useStore } from "@nanostores/react";
 import { projectIndex } from "../../App/projectsStore";
 import { IMAGES } from "@assets/const/Images.ts";
-// import type { IMAGES } from "@assets/const/Images";
 
 function heroImage() {
   const $index = useStore(projectIndex);

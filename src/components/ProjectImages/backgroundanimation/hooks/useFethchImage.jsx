@@ -19,6 +19,7 @@ export function useFetchImage() {
         images[i] = new Promise((res) => {
           const img = new Image();
           img.src = src;
+          img.role = "presentation";
           img.onload = res;
         });
       });
