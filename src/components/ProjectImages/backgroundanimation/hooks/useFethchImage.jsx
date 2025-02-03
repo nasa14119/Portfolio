@@ -11,9 +11,10 @@ export function useFetchImage() {
     setLoading(() => true);
     const fetchImages = async () => {
       const { getImages } = IMAGES[$index];
-      const sources = Object.keys(getImages()).map((path) => {
-        return new URL(path.replace("public/", ""), import.meta.url).href;
-      });
+      const sources = getImages();
+      // const sources = Object.keys(getImages()).map((path) => {
+      //   return new URL(path.replace("public/", ""), import.meta.url).href;
+      // });
       const images = [];
       sources.forEach((src, i) => {
         images[i] = new Promise((res) => {

@@ -9,13 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "3.6.0",
+    "@astrojs/react": "^4.2.0",
     "@astrojs/tailwind": "^5.1.0",
     "@midudev/tailwind-animations": "^0.0.7",
     "@nanostores/react": "^0.7.1",
     "@types/react": "^18.2.8",
     "@types/react-dom": "^18.2.4",
-    "astro": "4.11.5",
+    "astro": "^4.8.0",
     "nanostores": "^0.9.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
