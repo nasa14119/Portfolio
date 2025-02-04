@@ -1,13 +1,14 @@
-import Icons from "../Icons/BrandIcons"
-
+import { ReactIcon } from "@assets/Icons/BrandIcons/react-icon.jsx";
+import { AstroIcon } from "@assets/Icons/BrandIcons/astro-icon.jsx";
+import type { ReactNode } from "react";
 export type DescIcon = {
-  reactIcon: string,
-  astroIcon: string,  
-}
-export const DescIcon = {
-  reactIcon: Icons.ReactIcon,
-  astroIcon: Icons.AstroIcon,
+  reactIcon: ReactNode;
+  astroIcon: ReactNode;
 };
-export interface Props{
-  data: DescIcon[keyof DescIcon]
+export const DescIcon = {
+  reactIcon: ReactIcon,
+  astroIcon: AstroIcon,
+};
+export interface Props {
+  data: DescIcon[keyof DescIcon];
 }

@@ -1,24 +1,21 @@
-import { useState , useEffect} from 'react'
-import { projectIndex } from '../../App/projectsStore';
-import { useStore } from '@nanostores/react';
-import {DescIcon} from "@assets/const/Menu"
-function IconDescrip({data}: {data:keyof DescIcon}) {
-    const $index = useStore(projectIndex); 
-    const [isLoadingIcon, setIconLoading] = useState(true); 
-    useEffect(() => {
-        setIconLoading(() => true); 
-        let cleanup = setTimeout(() => {setIconLoading(false)} , 500);
-        return () => clearTimeout(cleanup); 
-    }, [$index]); 
+import { useEffect, useState } from "react";
+import { useStore } from "@nanostores/react";
+import { DescIcon } from "@assets/const/Menu";
+import { projectIndex } from "@components/App/projectsStore";
+function IconDescrip({ data }: { data: keyof DescIcon }) {
+  const [isLoadingIcon, setIconLoading] = useState(true);
+  const isChanging = useStore(projectIndex);
+  useEffect(() => {
+    setIconLoading(true);
+    const timeOutId = setTimeout(() => setIconLoading(false), 500);
+    return () => clearTimeout(timeOutId);
+  }, [isChanging]);
+  const Icon = DescIcon[data];
   return (
-    <div className="description-image" data-transition={isLoadingIcon}>
-      <img
-        src={DescIcon[data].src}
-        alt="Icono de Proyecto"
-        className="md:h-full aspect-square"
-      />
+    <div className="description-image">
+      <Icon className="size-full p-2" data-transition={isLoadingIcon} />
     </div>
   );
 }
 
-export default IconDescrip
+export default IconDescrip;
