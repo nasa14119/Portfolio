@@ -44,4 +44,4 @@ const UnsplashGallery: ImportObject = {
   },
   descriptionText: `One of my favorite pages. Showcasing full stack skills, MERN stack is a page that lets you save link to images in a good interface, whit inifnite scroll. What you can do whit it is save thouse images in unsplash you whant to save for later proyects`,
 };
-export const IMPORTS = [Blog, UnsplashGallery];
+export const IMPORTS = [PortalFamilia, Blog, UnsplashGallery];

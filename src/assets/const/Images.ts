@@ -1,80 +1,39 @@
 export type IMAGES = Array<{
-  heroImage: () => string;
-  getImages: () => Record<string, () => Promise<string>>;
+  heroImage: string;
+  getImages: () => string[];
 }>;
-export const IMAGES = [
+const parseURL = (glob: any) => () => {
+  const keys = Object.keys(glob()).map((key) => key.replace("public/", ""));
+  const urls = keys.map((key) => new URL(key, import.meta.url).href);
+  return urls;
+};
+const heroImageURL = (path: string) => new URL(path, import.meta.url).href;
+export const IMAGES: IMAGES = [
   {
-    heroImage: () => "/ExampleImages/PortalFamilia/HeroImage.png",
-    getImages: () => [
-      "/ExampleImages/PortalFamilia/HeroImage.png",
-      "/ExampleImages/PortalFamilia/HeroImage.png",
-    ],
+    heroImage: heroImageURL("/ExampleImages/PortalFamilia/HeroImage.png"),
+    getImages: parseURL(() =>
+      import.meta.glob([
+        "public/ExampleImages/PortalFamilia/*.png",
+        "!**/HeroImage.png",
+      ])
+    ),
   },
   {
-    heroImage: () => "/ExampleImages/PortalFamilia/HeroImage.png",
-    getImages: () => [
-      "/ExampleImages/PortalFamilia/HeroImage.png",
-      "/ExampleImages/PortalFamilia/HeroImage.png",
-    ],
+    heroImage: heroImageURL("/ExampleImages/BlogAstro/HeroImage.png"),
+    getImages: parseURL(() =>
+      import.meta.glob([
+        "public/ExampleImages/BlogAstro/*.png",
+        "!**/HeroImage.png",
+      ])
+    ),
   },
   {
-    heroImage: () => "/ExampleImages/PortalFamilia/HeroImage.png",
-    getImages: () => [
-      "/ExampleImages/PortalFamilia/HeroImage.png",
-      "/ExampleImages/PortalFamilia/HeroImage.png",
-    ],
+    heroImage: heroImageURL("/ExampleImages/Galeria/HeroImage.png"),
+    getImages: parseURL(() =>
+      import.meta.glob([
+        "public/ExampleImages/Galeria/*.png",
+        "!**/HeroImage.png",
+      ])
+    ),
   },
 ];
-// const parseData = (glob: () => any) => () => {
-//   return "/ExampleImages/PortalFamilia/HeroImage.png";
-//   const key = Object.keys(glob())[0];
-//   const url = new URL(key.replace("public/", ""), import.meta.url);
-//   return url.href;
-// };
-// export const IMAGES = [
-//   {
-//     heroImage: parseData(() =>
-//       import.meta.glob(["public/ExampleImages/PortalFamilia/HeroImage.png"], {
-//         import: "default",
-//         eager: true,
-//       })
-//     ),
-//     getImages: () =>
-//       import.meta.glob(
-//         ["public/ExampleImages/PortalFamilia/*.png", "!**/HeroImage.png"],
-//         {
-//           import: "default",
-//         }
-//       ),
-//   },
-//   {
-//     heroImage: parseData(() =>
-//       import.meta.glob(["public/ExampleImages/BlogAstro/HeroImage.png"], {
-//         import: "default",
-//         eager: true,
-//       })
-//     ),
-//     getImages: () =>
-//       import.meta.glob(
-//         ["public/ExampleImages/BlogAstro/*.png", "!**/HeroImage.png"],
-//         {
-//           import: "default",
-//         }
-//       ),
-//   },
-//   {
-//     heroImage: parseData(() =>
-//       import.meta.glob(["public/ExampleImages/Galeria/HeroImage.png"], {
-//         eager: true,
-//         import: "default",
-//       })
-//     ),
-//     getImages: () =>
-//       import.meta.glob(
-//         ["public/ExampleImages/Galeria/*.png", "!**/HeroImage.png"],
-//         {
-//           import: "default",
-//         }
-//       ),
-//   },
-// ] as IMAGES;

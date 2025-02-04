@@ -3,7 +3,6 @@ import "./styles.css";
 import { useStore } from "@nanostores/react";
 import { projectIndex } from "../../App/projectsStore";
 import { IMAGES } from "@assets/const/Images.ts";
-
 function heroImage() {
   const $index = useStore(projectIndex);
   const [isLoading, setLoading] = useState(false);
@@ -14,11 +13,10 @@ function heroImage() {
     if (!heroImage) return;
     const preload = () => {
       setLoading(true);
-      const src = heroImage();
       new Promise<string>((res) => {
         const img = new Image();
-        img.onload = () => res(src);
-        img.src = src;
+        img.onload = () => res(heroImage);
+        img.src = heroImage;
       })
         .then((v) => {
           if (isShouldChage) {

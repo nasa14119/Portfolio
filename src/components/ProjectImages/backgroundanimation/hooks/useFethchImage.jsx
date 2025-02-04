@@ -12,18 +12,14 @@ export function useFetchImage() {
     const fetchImages = async () => {
       const { getImages } = IMAGES[$index];
       const sources = getImages();
-      // const sources = Object.keys(getImages()).map((path) => {
-      //   return new URL(path.replace("public/", ""), import.meta.url).href;
-      // });
-      const images = [];
-      sources.forEach((src, i) => {
-        images[i] = new Promise((res) => {
-          const img = new Image();
-          img.src = src;
-          img.role = "presentation";
-          img.onload = res;
-        });
-      });
+      const images = sources.map(
+        (src) =>
+          new Promise((res) => {
+            const img = new Image();
+            img.onload = () => res(img);
+            img.src = src;
+          })
+      );
       await Promise.all(images);
       if (shouldupdate) {
         setData(() => sources);
