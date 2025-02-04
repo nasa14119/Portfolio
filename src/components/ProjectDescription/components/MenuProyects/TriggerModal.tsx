@@ -6,7 +6,7 @@ export function TriggerModal() {
       onClick={setModal}
     >
       <img
-        src={"http://localhost:4321/icons/menu-hamburger.svg"}
+        src={"icons/menu-hamburger.svg"}
         alt="Menu para escojer un projecto"
         className="md:h-full aspect-square"
       />
