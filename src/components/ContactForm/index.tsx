@@ -1,17 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Cross from "@assets/Icons/cross.svg";
 import "./styles.css";
 import Confirmation from "./components/Confirmation";
 import Form from "./components/Form";
 import { useSend } from "./hooks/useSend";
-import type _default from "astro/runtime/client/idle.prebuilt.js";
 interface Props {
   text: string;
   classStyle: string;
 }
 export function ContactForm({ text, classStyle }: Props) {
-  const inView = useRef(false);
-  const [transitions, switchTranState] = useState("false");
+  const inView = useRef(true);
+  const [transitions, switchTranState] = useState("true");
   const [ConfirmMessage, setConfirmation] = useState<JSX.Element | null>(null);
   useEffect(() => {
     if (ConfirmMessage !== null) {
@@ -38,7 +37,6 @@ export function ContactForm({ text, classStyle }: Props) {
   };
   useEffect(() => {
     const handleEsq = (e: KeyboardEvent) => {
-      console.log("press");
       if (!inView.current) return;
       if (e.key === "Escape") handleClick();
     };
