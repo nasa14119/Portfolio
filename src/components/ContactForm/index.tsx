@@ -9,8 +9,8 @@ interface Props {
   classStyle: string;
 }
 export function ContactForm({ text, classStyle }: Props) {
-  const inView = useRef(true);
-  const [transitions, switchTranState] = useState("true");
+  const inView = useRef(false);
+  const [transitions, switchTranState] = useState("false");
   const [ConfirmMessage, setConfirmation] = useState<JSX.Element | null>(null);
   useEffect(() => {
     if (ConfirmMessage !== null) {
