@@ -1,18 +1,25 @@
 ---
-import {ArrowDown} from "@assets/Icons"
-import Nav from "../App/Navegation.astro"
+import { ArrowDown } from "@assets/Icons";
+import Nav from "../App/Navegation.astro";
 ---
+
 <header class="row-span-2 relative">
-    <Nav/>
-    <main class="text-complementOne flex flex-col justify-center items-center relative h-screen md:h-full">
-        <h1 class="text-[4rem] text-left px-5 md:px-0 md:text-center md:text-[8vw]">
-            Nicolas
-        </h1>
-        <h2 class="text-complementTwo md:text-white x-10 md:my-5 text-left md:bg-complementTwo md:w-4/5 md:text-[2rem] rounded-md md:px-8">
-            Front-End Developer
-        </h2> 
-    </main>
-    <div class="absolute bottom-12 md:bottom-0 inset-x-0 flex justify-center text-secundary h-[5%] opacity-80">
-        <ArrowDown/> 
-    </div>
+  <Nav />
+  <main
+    class="text-complementOne flex flex-col justify-center items-center relative h-screen md:h-full"
+  >
+    <h1 class="text-[4rem] text-left px-5 md:px-0 md:text-center md:text-[8vw]">
+      Nicolas
+    </h1>
+    <h2
+      class="text-complementTwo md:text-white x-10 md:my-5 text-left md:bg-complementTwo md:w-4/5 md:text-[2rem] rounded-md md:px-8"
+    >
+      Web Developer
+    </h2>
+  </main>
+  <div
+    class="absolute bottom-12 md:bottom-0 inset-x-0 flex justify-center text-secundary h-[5%] opacity-80"
+  >
+    <ArrowDown />
+  </div>
 </header>

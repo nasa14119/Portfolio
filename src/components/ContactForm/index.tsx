@@ -22,8 +22,10 @@ export function ContactForm({ text, classStyle }: Props) {
   }, [ConfirmMessage]);
   const handleTransitons = () => {
     if (inView.current) {
+      document.body.style.overflow = "hidden";
       switchTranState(() => "true");
     } else {
+      document.body.style.overflow = "auto";
       switchTranState(() => "false");
     }
   };
