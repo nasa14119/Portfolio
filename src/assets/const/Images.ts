@@ -19,12 +19,9 @@ export const IMAGES: IMAGES = [
     ),
   },
   {
-    heroImage: heroImageURL("/ExampleImages/BlogAstro/HeroImage.png"),
+    heroImage: heroImageURL("/ExampleImages/Iot/HeroIot.png"),
     getImages: parseURL(() =>
-      import.meta.glob([
-        "public/ExampleImages/BlogAstro/*.png",
-        "!**/HeroImage.png",
-      ])
+      import.meta.glob(["public/ExampleImages/Iot/*.png", "!**/HeroIot.png"])
     ),
   },
   {
