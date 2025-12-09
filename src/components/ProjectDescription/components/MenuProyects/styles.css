@@ -1,15 +1,10 @@
 @reference "@assets/css/index.css";
 .menu-proyects {
-  @apply fixed inset-0 place-content-center z-10;
-}
-.menu-proyects ul::-webkit-scrollbar {
-  display: none;
+  @apply fixed inset-0 place-content-center z-10 grid invisible;
 }
 .menu-proyects ul {
   scrollbar-width: none;
-}
-.menu-proyects ul {
-  /* @apply p-5 rounded-[1rem] bg-complementTwo min-h-[45vh] max-h-[60vh] overflow-y-scroll md:w-[40vw] w-[90vw] max-w-[600px]; */
+  @apply p-5 rounded-[1rem] min-h-[45vh] max-h-[60vh] overflow-y-scroll md:w-[40vw] w-[90vw] max-w-[600px] bg-complementTwo;
 }
 @keyframes menu-animation {
   from {
@@ -25,16 +20,20 @@
   }
   to {
     opacity: 0;
-    display: none;
   }
 }
+.menu-proyects[data-isvisible="idle"] {
+  visibility: hidden;
+  z-index: -50;
+}
 .menu-proyects[data-isvisible="false"] {
-  animation: menu-animation-out 250ms ease-in forwards;
-  display: none;
+  visibility: visible;
+  animation: menu-animation-out 250ms ease forwards;
+  z-index: -50;
 }
 .menu-proyects[data-isvisible="true"] {
+  visibility: visible;
   animation: menu-animation 250ms ease-in forwards;
-  display: grid;
   opacity: 1;
 }
 .menu-proyects li {
