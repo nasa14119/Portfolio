@@ -1,3 +1,4 @@
+@reference "@assets/css/index.css";
 .container-contact {
   flex-direction: column;
   justify-content: center;
@@ -86,7 +87,7 @@
 }
 #submit {
   animation: forwards 500ms loading_ ease-out;
-  @apply bg-complementTwo font-h1 md:text-[32px] my-2 cursor-pointer text-white  p-0 h-10 md:h-20 mx-auto;
+  @apply bg-complementTwo font-title md:text-[32px] my-2 cursor-pointer text-white  p-0 h-10 md:h-20 mx-auto;
 }
 #submit:focus {
   @apply outline-1 outline-complementOne;
@@ -148,13 +149,13 @@
 }
 .contact input,
 .contact textarea {
-  @apply px-2 py-5 md:p-5 outline-none rounded-lg bg-[transparent] border-solid border-2 border-complementTwo font-p w-full text-complementary;
+  @apply px-2 py-5 md:p-5 outline-none rounded-lg bg-[transparent] border-solid border-2 border-complementTwo font-base w-full text-complementary;
 }
 .contact textarea {
   @apply resize-none;
 }
 .contact label {
-  @apply text-complementTwo font-h1 relative pt-10;
+  @apply text-complementTwo font-title relative pt-10;
 }
 .contact label > span {
   @apply absolute -top-0 left-0;

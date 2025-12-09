@@ -1,10 +1,10 @@
-interface Links{
-  demo : string,
-  code : string
+interface Links {
+  demo: string;
+  code: string;
 }
-function Controls({demo, code} : Links) {
+function Controls({ demo, code }: Links) {
   return (
-    <footer className="box-border flex justify-evenly md:justify-center gap-x-10 h-[15%] md:h-fit mt-auto mb-5">
+    <footer className="box-border flex justify-evenly md:justify-center gap-x-10 h-[15%] md:h-fit mt-2 md:mt-auto">
       <a href={demo} target="_blank">
         <div className="w-full md:w-fit px-2 border-2 border-complementTwo flex text-complementTwo rounded-3xl justify-center items-center h-full md:py-2">
           <svg
@@ -13,7 +13,7 @@ function Controls({demo, code} : Links) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-10 h-10 text-complementOne"
+            className="w-10 h-10 text-complementOne mr-1"
           >
             <path
               strokeLinecap="round"
@@ -22,7 +22,7 @@ function Controls({demo, code} : Links) {
             />
           </svg>
 
-          <span>Live Demo</span>
+          <span className="leading-4">Live Demo</span>
         </div>
       </a>
       <a href={code} target="_blank">
@@ -40,7 +40,7 @@ function Controls({demo, code} : Links) {
               id="Page-1"
               stroke="none"
               strokeWidth="1"
-              fill="none"
+              fill="currentColor"
               fillRule="evenodd"
             >
               <g
@@ -57,11 +57,11 @@ function Controls({demo, code} : Links) {
               </g>
             </g>
           </svg>
-          <span>See Code </span>
+          <span className="leading-4">See Code </span>
         </div>
       </a>
     </footer>
   );
 }
 
-export default Controls
+export default Controls;

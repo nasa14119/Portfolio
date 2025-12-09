@@ -1,11 +1,11 @@
 import { useStore } from "@nanostores/react";
 import { modal } from "../../../App/projectsStore.js";
-import {changePage, getTitles, setModal} from "./utils"
+import { changePage, getTitles, setModal } from "./utils";
 import { useMemo } from "react";
-import "./styles.css"
+import "./styles.css";
 export function ModalProjects({}) {
-  const $modal = useStore(modal); 
-  const data : Array<{id:number, title: string}> = useMemo(getTitles, []); 
+  const $modal = useStore(modal);
+  const data: Array<{ id: number; title: string }> = useMemo(getTitles, []);
   return (
     <nav className="menu-proyects" data-isvisible={$modal} onClick={setModal}>
       <ul className="relative" onClick={(e) => e.stopPropagation()}>
@@ -22,7 +22,7 @@ export function ModalProjects({}) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-full h-full"
+            className="w-full h-full cursor-pointer"
           >
             <path
               strokeLinecap="round"

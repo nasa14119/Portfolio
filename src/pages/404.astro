@@ -1,31 +1,39 @@
 ---
 import ErrorPage from "../layouts/Default.astro";
-import Nav from "../components/App/Navegation.astro"
+import Nav from "../components/App/Navegation.astro";
 import ButtonPrimary from "../components/App/ButtonPrimary.astro";
 ---
 
 <ErrorPage desc="It ocurre an error in the url" title="404">
-    <ul class="fixed inset-0 flex justify-center bg-complementTwo before:inset-0 before:absolute before:-z-50 h-screen flex-col text-center gap-y-16">
-        <nav class="fixed top-10 p-5 inset-x-0">
-            <ul class="flex text-[18px] justify-evenly md:justify-end md:text-[2rem] font-h1 md:gap-x-10">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/proyects">Projects</a>
-                </li>
-                <li>
-                    <a href="/blog">Blog</a>
-                </li>
-            </ul>
-        </nav>
+  <ul
+    class="fixed inset-0 flex justify-center bg-complementTwo before:inset-0 before:absolute before:-z-50 h-screen flex-col text-center gap-y-16"
+  >
+    <nav class="fixed top-10 p-5 inset-x-0">
+      <ul
+        class="flex text-[18px] justify-evenly md:justify-end md:text-[2rem] font-title md:gap-x-10"
+      >
         <li>
-            <h1 class="font-h1 text-[7vh] md:text-[5rem] text-primary">
-                404 Error 
-            </h1>
+          <a href="/">Home</a>
         </li>
-        <li class="w-full flex justify-center">
-            <ButtonPrimary href="/" text="Home" className="font-medium px-5  text-[4vh] md:text-3xl"/> 
+        <li>
+          <a href="/proyects">Projects</a>
         </li>
-    </ul>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+      </ul>
+    </nav>
+    <li>
+      <h1 class="font-title text-[7vh] md:text-[5rem] text-primary">
+        404 Error
+      </h1>
+    </li>
+    <li class="w-full flex justify-center">
+      <ButtonPrimary
+        href="/"
+        text="Home"
+        className="font-medium px-5  text-[4vh] md:text-3xl"
+      />
+    </li>
+  </ul>
 </ErrorPage>
