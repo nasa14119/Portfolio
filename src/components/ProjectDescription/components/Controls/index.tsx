@@ -1,8 +1,8 @@
-interface Links{
-  demo : string,
-  code : string
+interface Links {
+  demo: string;
+  code: string;
 }
-function Controls({demo, code} : Links) {
+function Controls({ demo, code }: Links) {
   return (
     <footer className="box-border flex justify-evenly md:justify-center gap-x-10 h-[15%] md:h-fit mt-auto mb-5">
       <a href={demo} target="_blank">
@@ -40,7 +40,7 @@ function Controls({demo, code} : Links) {
               id="Page-1"
               stroke="none"
               strokeWidth="1"
-              fill="none"
+              fill="currentColor"
               fillRule="evenodd"
             >
               <g
@@ -64,4 +64,4 @@ function Controls({demo, code} : Links) {
   );
 }
 
-export default Controls
+export default Controls;

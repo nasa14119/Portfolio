@@ -1,75 +1,83 @@
 ---
 import { Email, Discord, Github } from "@assets/Icons";
-const {style = ""} = Astro.props; 
+const { style = "" } = Astro.props;
 ---
 
 <footer class={style}>
-    <h2 class="text-3xl text-center my-5 font-h1 text-secundary">
-        Nicolas Amaya
-    </h2>
-    <ul class="social-icons">
-        <li>
-            <a href="mailto:nico.amaya0205@gmail.com" target="_blank" aria-label="Make a Mail">
-                <Email />
-            </a>
-            <span class="md:hidden text-[12px] text-complementOne/75"
-                >nico.amaya0205@gmail.com</span
-            >
-        </li>
-        <li>
-            <a
-                href="https://discordapp.com/users/814863347165036615"
-                target="_blank"
-                aria-label="Link to Discord"
-            >
-                <Discord />
-            </a>
-            <span class="md:hidden text-[12px] text-complementOne/75"
-                >Nico.amya#0563</span
-            >
-        </li>
-        <li>
-            <a href="https://github.com/nasa14119" target="_blank" aria-label="Link to Github page">
-                <Github />
-            </a>
-            <span class="md:hidden text-[12px] text-complementOne/75"
-                >nasa14119</span
-            >
-        </li>
-    </ul>
-    <span class="absolute left-5 bottom-5 text-xs">
-        © {new Date().getFullYear()}
-    </span>
+  <h2 class="text-3xl text-center my-5 font-title text-secundary">
+    Nicolas Amaya
+  </h2>
+  <ul class="social-icons">
+    <li>
+      <a
+        href="mailto:nico.amaya0205@gmail.com"
+        target="_blank"
+        aria-label="Make a Mail"
+      >
+        <Email />
+      </a>
+      <span class="md:hidden text-[12px] text-complementOne/75"
+        >nico.amaya0205@gmail.com</span
+      >
+    </li>
+    <li>
+      <a
+        href="https://discordapp.com/users/814863347165036615"
+        target="_blank"
+        aria-label="Link to Discord"
+      >
+        <Discord />
+      </a>
+      <span class="md:hidden text-[12px] text-complementOne/75"
+        >Nico.amya#0563</span
+      >
+    </li>
+    <li>
+      <a
+        href="https://github.com/nasa14119"
+        target="_blank"
+        aria-label="Link to Github page"
+      >
+        <Github />
+      </a>
+      <span class="md:hidden text-[12px] text-complementOne/75">nasa14119</span>
+    </li>
+  </ul>
+  <span class="absolute left-5 bottom-5 text-xs">
+    © {new Date().getFullYear()}
+  </span>
 </footer>
 <style>
-    footer {
-        grid-area: footer;
-        @apply bg-white text-secundary py-20 relative md:bg-complementary  md:rounded-lg rounded-tl-3xl rounded-tr-3xl mt-10;
-    }
+  @reference "@assets/css/index.css";
+  footer {
+    grid-area: footer;
+    @apply bg-white text-secundary py-20 relative md:bg-complementary  md:rounded-lg rounded-tl-3xl rounded-tr-3xl mt-10;
+  }
 </style>
 <style is:global>
-    .social-icons {
-        @apply flex flex-col justify-evenly md:flex-row md:justify-center  md:text-complementTwo md:items-center gap-y-10 w-[50%] mx-5 md:mx-auto;
-    }
-    .social-icons li {
-        @apply cursor-pointer flex items-center gap-x-5 md:gap-x-0 md:ml-0 md:p-5;
-    }
-    .social-icons li #email-icon g {
-        @apply stroke-complementTwo hover:stroke-secundary md:stroke-complementTwo !fill-[transparent];
-    }
-    .social-icons li:hover svg#email-icon g {
-        @apply stroke-complementTwo;
-    }
-    .social-icons li:hover g {
-        @apply fill-complementTwo;
-    }
-    .social-icons li g {
-        @apply fill-complementTwo  md:fill-complementTwo;
-    }
-    .social-icons li svg:not(#email-icon) {
-        @apply aspect-square h-14 md:h-10;
-    }
-    .social-icons li svg#email-icon {
-        @apply aspect-square h-14 md:h-10;
-    }
+  @reference "@assets/css/index.css";
+  .social-icons {
+    @apply flex flex-col justify-evenly md:flex-row md:justify-center  md:text-complementTwo md:items-center gap-y-10 w-[50%] mx-5 md:mx-auto;
+  }
+  .social-icons li {
+    @apply cursor-pointer flex items-center gap-x-5 md:gap-x-0 md:ml-0 md:p-5;
+  }
+  .social-icons li #email-icon g {
+    @apply stroke-complementTwo hover:stroke-secundary md:stroke-complementTwo !fill-[transparent];
+  }
+  .social-icons li:hover svg#email-icon g {
+    @apply stroke-complementTwo;
+  }
+  .social-icons li:hover g {
+    @apply fill-complementTwo;
+  }
+  .social-icons li g {
+    @apply fill-complementTwo  md:fill-complementTwo;
+  }
+  .social-icons li svg:not(#email-icon) {
+    @apply aspect-square h-14 md:h-10;
+  }
+  .social-icons li svg#email-icon {
+    @apply aspect-square h-14 md:h-10;
+  }
 </style>

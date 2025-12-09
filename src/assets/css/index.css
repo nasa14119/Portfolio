@@ -1,25 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
-html{
-    @apply bg-primary text-complementary; 
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+@plugin "@midudev/tailwind-animations";
+
+html {
+  @apply bg-primary text-complementary;
 }
 @font-face {
-    font-family: "Alien";
-    src: url("../fonts/Alien-Planet-3.ttf");
+  font-family: "Alien";
+  src: url("../fonts/Alien-Planet-3.ttf");
 }
-:root{
-    --primary-font: "Alien", sans-serif; 
-    --paragraft-font: 'Nunito', sans-serif;
-    /* --primary: #353535;  */
-    --primary: #000; 
-    --light-primary: #2a2a2a; 
-    --secundary: #CF5C36;
-    --complementary:#FFFFFF;
-    --complementOne: #FFB20F; 
-    --complementTwo:#D04242; 
+@theme {
+  --font-title: "Alien", sans-serif;
+  --font-base: "Nunito", sans-serif;
+  /* --primary: #353535;  */
+  --color-primary: #000;
+  --color-light-primary: #2a2a2a;
+  --color-secundary: #cf5c36;
+  --color-complementary: #ffffff;
+  --color-complementOne: #ffb20f;
+  --color-complementTwo: #d04242;
 }
-h1{
-    font-family: var(--primary-font);
+h1 {
+  font-family: var(--font-title);
 }
-p{
-    font-family: var(--paragraft-font);
+p {
+  font-family: var(--font-base);
 }

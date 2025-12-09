@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-interface Props{
-  confirm: boolean, 
-  err?: string
+import React, { useState } from "react";
+interface Props {
+  confirm: boolean;
+  err?: string;
 }
-function Confirmation({confirm, err}: Props) {
-    const [state, setState] = useState(true); 
+function Confirmation({ confirm, err }: Props) {
+  const [state, setState] = useState(true);
   return (
     <div
       className={`
@@ -16,10 +16,12 @@ function Confirmation({confirm, err}: Props) {
       onAnimationEnd={() => setState((prev) => false)}
     >
       {confirm ? (
-        <div className='text-primary font-h1'>Message send succes</div>
+        <div className="text-primary font-title">Message send succes</div>
       ) : (
-        <div className='flex flex-col text-center'>
-          <span className='text-primary font-h1 text-lg'>Error Sending message</span>
+        <div className="flex flex-col text-center">
+          <span className="text-primary font-title text-lg">
+            Error Sending message
+          </span>
           <span>{err && <span>{err}</span>}</span>
         </div>
       )}
@@ -27,4 +29,4 @@ function Confirmation({confirm, err}: Props) {
   );
 }
 
-export default Confirmation
+export default Confirmation;

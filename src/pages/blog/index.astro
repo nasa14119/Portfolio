@@ -42,7 +42,9 @@ const articles = await Astro.glob("./*.md");
     </h1>
   </header>
   <main>
-    <h2 class="text-[10vw] py-2 px-5 font-h1 text-complementOne">Articles</h2>
+    <h2 class="text-[10vw] py-2 px-5 font-title text-complementOne">
+      Articles
+    </h2>
     <section class="grid-articles">
       {
         articles.map((article) => (
@@ -59,7 +61,8 @@ const articles = await Astro.glob("./*.md");
   </main>
 </Default>
 <style>
-  .grid-articles{
-    @apply grid grid-cols-1 md:grid-cols-3 px-5
+  @reference "@assets/css/index.css";
+  .grid-articles {
+    @apply grid grid-cols-1 md:grid-cols-3 px-5;
   }
 </style>

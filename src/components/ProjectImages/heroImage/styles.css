@@ -1,3 +1,5 @@
+@reference "@assets/css/index.css";
+
 .heroImage {
   position: absolute;
   inset: 0;
