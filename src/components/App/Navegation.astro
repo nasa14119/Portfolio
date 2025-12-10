@@ -1,9 +1,12 @@
 ---
 import { getHomeLocale } from "@assets/data/index";
 import { ContactForm as Form } from "../ContactForm";
+import { getRelativeLocaleUrl } from "astro:i18n";
 const { textLogo = "Nas" } = Astro.props;
 const { currentLocale } = Astro;
 const { nav } = getHomeLocale(currentLocale);
+const link = (path: string) =>
+  getRelativeLocaleUrl(Astro.currentLocale as string, path);
 ---
 
 <nav
@@ -12,7 +15,7 @@ const { nav } = getHomeLocale(currentLocale);
   <span
     class="font-base md:font-title text-2xl md:py-4 md:hover:text-secundary"
   >
-    <a href="/" aria-label={textLogo}>
+    <a href={link("/")} aria-label={textLogo}>
       {textLogo}
     </a>
   </span>
@@ -21,7 +24,7 @@ const { nav } = getHomeLocale(currentLocale);
       class="justify-self-end w-full gap-x-2 flex justify-between md:gap-x-5 font-base md:text-lg cursor-pointer"
     >
       <li class="md:hover:text-complementary min-w-[2rem]">
-        <a href="/" aria-label="Home">{nav.items[0]}</a>
+        <a href={link("/")} aria-label="Home">{nav.items[0]}</a>
       </li>
       <li class="md:hover:text-complementary min-w-[2rem]" id="contact">
         <Form
@@ -32,7 +35,7 @@ const { nav } = getHomeLocale(currentLocale);
         />
       </li>
       <li class="md:hover:text-complementary min-w-[2rem]">
-        <a href="/proyects" aria-label="Proyects"> {nav.items[2]} </a>
+        <a href={link("/proyects")} aria-label="Proyects"> {nav.items[2]} </a>
       </li>
     </ul>
   </span>
