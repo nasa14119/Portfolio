@@ -1,6 +1,9 @@
 ---
+import { getHomeLocale } from "@assets/data/index";
 import { ContactForm as Form } from "../ContactForm";
 const { textLogo = "Nas" } = Astro.props;
+const { currentLocale } = Astro;
+const { nav } = getHomeLocale(currentLocale);
 ---
 
 <nav
@@ -18,13 +21,18 @@ const { textLogo = "Nas" } = Astro.props;
       class="justify-self-end w-full gap-x-2 flex justify-between md:gap-x-5 font-base md:text-lg cursor-pointer"
     >
       <li class="md:hover:text-complementary min-w-[2rem]">
-        <a href="/" aria-label="Home"> Home </a>
+        <a href="/" aria-label="Home">{nav.items[0]}</a>
       </li>
       <li class="md:hover:text-complementary min-w-[2rem]" id="contact">
-        <Form text="Contact" client:visible classStyle={"btn"} />
+        <Form
+          text={nav.items[1]}
+          client:visible
+          classStyle={"btn"}
+          items={nav.form}
+        />
       </li>
       <li class="md:hover:text-complementary min-w-[2rem]">
-        <a href="/proyects" aria-label="Proyects"> Projects </a>
+        <a href="/proyects" aria-label="Proyects"> {nav.items[2]} </a>
       </li>
     </ul>
   </span>

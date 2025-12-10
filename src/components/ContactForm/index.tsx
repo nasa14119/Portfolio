@@ -7,8 +7,9 @@ import { useSend } from "./hooks/useSend";
 interface Props {
   text: string;
   classStyle: string;
+  items: string[];
 }
-export function ContactForm({ text, classStyle }: Props) {
+export function ContactForm({ text, classStyle, items }: Props) {
   const inView = useRef(false);
   const [transitions, switchTranState] = useState("false");
   const [ConfirmMessage, setConfirmation] = useState<JSX.Element | null>(null);
@@ -68,7 +69,7 @@ export function ContactForm({ text, classStyle }: Props) {
         <span className="contact-cross" onClick={handleClick}>
           <img src={Cross.src} alt="cross" loading="lazy" />
         </span>
-        <Form handleSubmit={handleSubmit} />
+        <Form handleSubmit={handleSubmit} items={items} />
         <div className="flex justify-center">
           {ConfirmMessage !== null ? ConfirmMessage : null}
         </div>

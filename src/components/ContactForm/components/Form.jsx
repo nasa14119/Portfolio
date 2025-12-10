@@ -29,7 +29,7 @@ function Loading() {
     </div>
   );
 }
-function Form({ handleSubmit }) {
+function Form({ handleSubmit, items }) {
   const [isLoading, setLoading] = useState(false);
   return (
     <form
@@ -50,17 +50,17 @@ function Form({ handleSubmit }) {
         <input type="email" name="email" id="email" />
       </label>
       <label htmlFor="name">
-        <span>Name</span>
+        <span>{items[0]}</span>
         <input type="text" name="name" id="name" />
       </label>
       <label htmlFor="comment">
-        <span>Comment</span>
+        <span>{items[1]}</span>
         <textarea type="text" name="comment" id="comment" rows={3} />
       </label>
       {isLoading ? (
         <Loading />
       ) : (
-        <input type="submit" name="submit" id="submit" value="send" />
+        <input type="submit" name="submit" id="submit" value={items[2]} />
       )}
     </form>
   );
