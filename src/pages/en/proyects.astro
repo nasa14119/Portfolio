@@ -1,0 +1,57 @@
+---
+import ProjectsPage from "@layouts/Default.astro";
+import Nav from "@components/App/Navegation.astro";
+import Footer from "@components/App/Footer.astro";
+import ProjectImages from "@components/ProjectImages/index.astro";
+import ProjectDescription from "@components/ProjectDescription";
+import { IMPORTS } from "@assets/data";
+---
+
+<ProjectsPage desc="Showcase of Projects I have made" title="Projects">
+  <Fragment slot="preload">
+    <link rel="preload" as="image" href="/icons/menu-hamburger.svg" />
+  </Fragment>
+  <Nav textLogo="Projects" />
+  <main class="relative">
+    <ProjectImages />
+    <article class="w-full min-h-[75vh] flex flex-col px-2">
+      <ProjectDescription client:load IMPORTS={IMPORTS} />
+    </article>
+  </main>
+  <Footer style="md:m-5" />
+</ProjectsPage>
+<style>
+  @reference "@assets/css/index.css";
+
+  main {
+    box-sizing: border-box;
+    padding: 0;
+    padding-inline: 2rem;
+    padding-top: 5rem;
+    display: grid;
+    margin-inline: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(75vh, 1fr) minmax(50vh, max-content);
+    @apply gap-y-4 md:gap-0;
+  }
+  @media (min-width: 769px) {
+    main {
+      margin: 0;
+      padding-top: 10%;
+      padding-inline: 1.5rem;
+      width: 100%;
+      min-height: 100vh;
+      grid-template-columns: 50% 1fr;
+      grid-template-rows: minmax(85vh, 1fr);
+    }
+    main > * {
+      max-width: 600px;
+      margin-inline: auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    main {
+      padding-block: 5%;
+    }
+  }
+</style>

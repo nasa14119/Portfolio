@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "items": ["Home", "Contacto", "Proyectos"]
+  },
+  "main": {
+    "header": "Desarrollador Web"
+  },
+  "info": {
+    "header": "¿Quién soy?",
+    "content": [
+      "Mi nombre es Nicolas Amaya. Soy colombiano, vivo en México desde el 2016. Actualmente estoy estudiando la carrera de Ingeniería en Tecnologías Computacionales en el Tecnológico de Monterrey. Tengo certificaciones en varios rubros, como lo son JavaScript, Git y React, además de experiencia en otras tecnologías.",
+      "Tengo al menos 5 años de experiencia programando mis propios proyectos, muchos desplegados que pueden ser vistos en la sección de proyectos. Esta página en sí es un ejemplo de lo que soy capaz, desarrollada por mí desde cero con el uso de Astro JS y React."
+    ]
+  },
+  "call_action": {
+    "header": "Ver proyectos"
+  }
+}
