@@ -1,0 +1,94 @@
+---
+import Lang from "@icons/svg/lang.svg";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const current = Astro.url.pathname;
+const locale = Astro.currentLocale;
+---
+
+<button
+  class="text-complementOne md:relative -z-10 sm:z-10 fixed bottom-5 right-5 md:bottom-0 md:right-0 sm:bg-transparent sm:backdrop-blur-none pointer-events-auto"
+  id="btn"
+  data-state="idle"
+>
+  <span class="background pointer-events-none"></span>
+  <Lang class="size-6 pointer-events-none -z-10" id="lang-icon" />
+  <span
+    class="absolute inset-y-0 -right-2 w-fit -z-10 sm:z-auto rounded-4xl flex items-center px-2 gap-x-2 pr-10 content"
+  >
+    <a href={locale === "en" ? "#" : getRelativeLocaleUrl("en", current)}
+      >english</a
+    >
+    <a href={locale === "es" ? "#" : current.replace("en/", "")}>español</a>
+  </span>
+</button>
+<script>
+  const btn = document.querySelector("#btn") as HTMLButtonElement;
+  let state: "idle" | "open" | "close" = "idle";
+  function handleClick() {
+    if (state === "idle" || state === "close") {
+      state = "open";
+    } else {
+      state = "close";
+    }
+    btn.dataset.state = state;
+  }
+  btn.addEventListener("click", handleClick);
+</script>
+<style>
+  @reference "@assets/css/index.css";
+  *[data-state="idle"] .content {
+    visibility: hidden;
+  }
+  @keyframes open {
+    from {
+      width: 2.5rem;
+    }
+    to {
+      width: 11rem;
+    }
+  }
+  @keyframes close {
+    from {
+      width: 11rem;
+    }
+    to {
+      width: 2.5rem;
+    }
+  }
+  .background {
+    width: 2.5rem;
+    height: auto;
+    @apply absolute rounded-full -inset-y-2 -right-2 bg-complementTwo/30 backdrop-blur-3xl sm:backdrop-blur-none sm:bg-complementTwo -z-50;
+  }
+  *[data-state="open"] .background {
+    animation: 250ms forwards ease open;
+    @apply aspect-auto;
+  }
+  *[data-state="close"] .background {
+    animation: 250ms forwards ease close;
+    @apply aspect-square;
+  }
+  @keyframes open-content {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes close-content {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  *[data-state="open"] .content {
+    animation: 250ms forwards ease open-content;
+    animation-delay: 300ms;
+    opacity: 0;
+  }
+  *[data-state="close"] .content {
+    pointer-events: none;
+    animation: 250ms forwards ease close-content;
+  }
+</style>
