@@ -1,6 +1,9 @@
 ---
-import { Email, Discord, Github } from "@assets/Icons";
+import { Icons } from "@icons/jsx/index";
 const { style = "" } = Astro.props;
+const Email = Icons["email"];
+const Discord = Icons["discord"];
+const Github = Icons["github"];
 ---
 
 <footer class={style}>
@@ -63,7 +66,7 @@ const { style = "" } = Astro.props;
     @apply cursor-pointer flex items-center gap-x-5 md:gap-x-0 md:ml-0 md:p-5;
   }
   .social-icons li #email-icon g {
-    @apply stroke-complementTwo hover:stroke-secundary md:stroke-complementTwo !fill-[transparent];
+    @apply stroke-complementTwo hover:stroke-secundary md:stroke-complementTwo fill-transparent!;
   }
   .social-icons li:hover svg#email-icon g {
     @apply stroke-complementTwo;

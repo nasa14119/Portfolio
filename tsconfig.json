@@ -8,8 +8,9 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@blogimg/*": ["src/components/Blog/assets/img/*"], 
-      "@blog/*":["src/components/Blog/*"]
+      "@blogimg/*": ["src/components/Blog/assets/img/*"],
+      "@blog/*": ["src/components/Blog/*"],
+      "@icons/*": ["src/assets/icons/*"]
     }
   }
 }

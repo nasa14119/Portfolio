@@ -1,4 +1,5 @@
 import { setModal } from "./utils";
+import icon from "@icons/svg/menu-hamburger.svg";
 export function TriggerModal() {
   return (
     <div
@@ -6,7 +7,7 @@ export function TriggerModal() {
       onClick={setModal}
     >
       <img
-        src={"icons/menu-hamburger.svg"}
+        src={icon.src}
         alt="Menu para escojer un projecto"
         className="md:h-full aspect-square"
       />

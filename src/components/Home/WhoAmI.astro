@@ -1,21 +1,20 @@
+---
+import { getHomeLocale } from "@assets/data/index";
+
+const { info } = getHomeLocale(Astro.currentLocale);
+---
+
 <main
   class="bg-secundary md:rounded-lg flex flex-col relative justify-center py-6 md:py-0 rounded-[2.5rem] px-[10%] md:px-7 -mt-5 md:mt-0 gap-y-4"
 >
   <h1 class="md:text-[2.5rem] text-primary text-[12vw] text-center">
-    Who am I?
+    {info.header}
   </h1>
   <p class="mb-5 md:mb-2">
-    Ok, let's do this one last time. My name is Nicolas Amaya, I am from
-    Colombia but move to México a long time ago. Born in July two of two
-    thousand and five. I like to think that I am fluent in English, but I am a
-    native Spanish speaker, noticeable in my spelling.
+    {info.content[0]}
   </p>
   <p>
-    Self-taught freelance programmer, specialized in Front-End development with
-    knowledge in CSS, HTML and JavaScript. Also, consume of API, React and Astro
-    JS. This page is made with this tech, and the contact page using React. In
-    the projects page, I show the things I can do. Eager to make your idea come
-    alive.
+    {info.content[1]}
   </p>
 </main>
 <style>

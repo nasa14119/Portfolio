@@ -1,6 +1,10 @@
 ---
-import { ArrowDown } from "@assets/Icons";
+import { Icons } from "@icons/jsx";
+const ArrowDown = Icons["arrowDown"];
 import Nav from "../App/Navegation.astro";
+import { getHomeLocale } from "@assets/data/index";
+const { currentLocale } = Astro;
+const { main } = getHomeLocale(currentLocale);
 ---
 
 <header class="row-span-2 relative">
@@ -14,7 +18,7 @@ import Nav from "../App/Navegation.astro";
     <h2
       class="text-complementTwo md:text-white x-10 md:my-5 text-left md:bg-complementTwo md:w-4/5 md:text-[2rem] rounded-md md:px-8"
     >
-      Web Developer
+      {main.header}
     </h2>
   </main>
   <div

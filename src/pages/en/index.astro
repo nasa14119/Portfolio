@@ -1,0 +1,39 @@
+---
+import Home from "@layouts/Default.astro";
+import Header from "@components/Home/Header.astro";
+import WhoAmI from "@components/Home/WhoAmI.astro";
+import Footer from "@components/App/Footer.astro";
+import CallProyects from "@components/Home/CallProyects.astro";
+---
+
+<Home desc="This is the home page of the porfolio">
+  <div class="home">
+    <!-- <div class="row-span-2"></div> -->
+    <Header />
+    <WhoAmI />
+    <CallProyects />
+  </div>
+  <Footer />
+</Home>
+<style is:global>
+  @reference "@assets/css/index.css";
+</style>
+<style>
+  @reference "@assets/css/index.css";
+  .home {
+    overflow-x: hidden;
+  }
+  @media (min-width: 768px) {
+    .home {
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 55% 1fr;
+      gap: 1rem;
+      @apply p-10;
+    }
+    .home * {
+      @apply bg-orange-800;
+    }
+  }
+</style>

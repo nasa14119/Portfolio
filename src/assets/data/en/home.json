@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "items": ["Home", "Contact", "Projects"],
+    "form": ["name", "comment", "send"]
+  },
+  "main": {
+    "header": "Web developer"
+  },
+  "info": {
+    "header": "Who am I?",
+    "content": [
+      "My name is Nicolas Amaya. I’m Colombian, and I’ve been living in Mexico since 2016. I’m currently studying a degree in Computer Technologies Engineering at Tecnológico de Monterrey. I hold certifications in several areas, such as JavaScript, Git, and React, in addition to having experience with other technologies.",
+      "I have at least five years of experience programming my own projects, many of which are deployed and can be viewed in the projects section. This website itself is an example of what I’m capable of, developed entirely by me from scratch using Astro JS and React."
+    ]
+  },
+  "call_action": {
+    "header": ["view", "projects"]
+  }
+}

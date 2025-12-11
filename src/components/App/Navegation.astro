@@ -1,15 +1,22 @@
 ---
+import { getHomeLocale } from "@assets/data/index";
 import { ContactForm as Form } from "../ContactForm";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Languange from "@components/App/Languange.astro";
 const { textLogo = "Nas" } = Astro.props;
+const { currentLocale } = Astro;
+const { nav } = getHomeLocale(currentLocale);
+const link = (path: string) =>
+  getRelativeLocaleUrl(Astro.currentLocale as string, path);
 ---
 
 <nav
-  class="flex items-baseline justify-between md:justify-between px-4 md:px-6 py-2 md:text-complementOne absolute top-5 inset-x-0 z-10 lg:top-2"
+  class="flex items-baseline justify-between md:justify-between px-4 md:px-6 py-2 md:text-complementOne absolute top-5 inset-x-0 z-20 lg:top-2"
 >
   <span
     class="font-base md:font-title text-2xl md:py-4 md:hover:text-secundary"
   >
-    <a href="/" aria-label={textLogo}>
+    <a href={link("/")} aria-label={textLogo}>
       {textLogo}
     </a>
   </span>
@@ -18,13 +25,21 @@ const { textLogo = "Nas" } = Astro.props;
       class="justify-self-end w-full gap-x-2 flex justify-between md:gap-x-5 font-base md:text-lg cursor-pointer"
     >
       <li class="md:hover:text-complementary min-w-[2rem]">
-        <a href="/" aria-label="Home"> Home </a>
+        <a href={link("/")} aria-label="Home">{nav.items[0]}</a>
       </li>
       <li class="md:hover:text-complementary min-w-[2rem]" id="contact">
-        <Form text="Contact" client:visible classStyle={"btn"} />
+        <Form
+          text={nav.items[1]}
+          client:visible
+          classStyle={"btn"}
+          items={nav.form}
+        />
       </li>
       <li class="md:hover:text-complementary min-w-[2rem]">
-        <a href="/proyects" aria-label="Proyects"> Projects </a>
+        <a href={link("/proyects")} aria-label="Proyects"> {nav.items[2]} </a>
+      </li>
+      <li class="pointer-events-none">
+        <Languange />
       </li>
     </ul>
   </span>
