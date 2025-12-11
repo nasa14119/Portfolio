@@ -1,8 +1,9 @@
-import type { DescIcon } from "./const/Menu";
+import type { KeyIcons } from "@assets/icons/jsx";
+
 export interface ImportObject {
   id: number;
   title: string;
-  Icon: keyof DescIcon;
+  Icon: KeyIcons;
   links: {
     code: string;
     demo: string;
@@ -15,7 +16,7 @@ export type IMPORTS = {
 const PortalFamilia: ImportObject = {
   id: 1,
   title: "Portal Familias",
-  Icon: "reactIcon",
+  Icon: "react",
   links: {
     code: "https://github.com/nasa14119/PortalFamilias_Redisen-o.git",
     demo: "https://portalfamilia-nicolas-amaya.onrender.com/",
@@ -25,7 +26,7 @@ const PortalFamilia: ImportObject = {
 const IOT: ImportObject = {
   id: 2,
   title: "Realtime app",
-  Icon: "nextIcon",
+  Icon: "next",
   links: {
     code: "https://github.com/nasa14119/iot-front",
     demo: "https://iot-front.nicolas-amaya.com",
@@ -37,7 +38,7 @@ const IOT: ImportObject = {
 const UnsplashGallery: ImportObject = {
   id: 3,
   title: "Image Gallery",
-  Icon: "reactIcon",
+  Icon: "react",
   links: {
     code: "https://github.com/nasa14119/FullStack-Gallery/",
     demo: "https://fullstack-gallery.onrender.com/",

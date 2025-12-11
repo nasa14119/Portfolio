@@ -1,12 +1,13 @@
 interface Links {
   demo: string;
   code: string;
+  items: string[];
 }
-function Controls({ demo, code }: Links) {
+function Controls({ demo, code, items }: Links) {
   return (
-    <footer className="box-border flex justify-evenly md:justify-center gap-x-10 h-[15%] md:h-fit mt-2 md:mt-auto">
+    <footer className="box-border flex justify-evenly md:justify-center gap-x-10 h-fit mt-2 md:mt-auto">
       <a href={demo} target="_blank">
-        <div className="w-full md:w-fit px-2 border-2 border-complementTwo flex text-complementTwo rounded-3xl justify-center items-center h-full md:py-2">
+        <div className="w-full md:w-fit p-2 border-2 border-complementTwo flex text-complementTwo rounded-3xl justify-center items-center h-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -22,11 +23,11 @@ function Controls({ demo, code }: Links) {
             />
           </svg>
 
-          <span className="leading-4">Live Demo</span>
+          <span className="leading-4">{items[0]}</span>
         </div>
       </a>
       <a href={code} target="_blank">
-        <div className="w-full md:w-fit px-2 border-2 border-complementTwo flex text-complementTwo gap-x-2 rounded-3xl justify-center items-center h-full md:py-2">
+        <div className="w-full md:w-fit p-2 border-2 border-complementTwo flex text-complementTwo gap-x-2 rounded-3xl justify-center items-center h-full">
           <svg
             viewBox="0 0 20 20"
             version="1.1"
@@ -57,7 +58,7 @@ function Controls({ demo, code }: Links) {
               </g>
             </g>
           </svg>
-          <span className="leading-4">See Code </span>
+          <span className="leading-4">{items[1]} </span>
         </div>
       </a>
     </footer>

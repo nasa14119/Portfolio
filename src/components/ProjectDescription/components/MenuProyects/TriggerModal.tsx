@@ -1,5 +1,5 @@
 import { setModal } from "./utils";
-import icon from "@assets/Icons/BrandIcons/menu-hamburger.svg";
+import icon from "@icons/svg/menu-hamburger.svg";
 export function TriggerModal() {
   return (
     <div

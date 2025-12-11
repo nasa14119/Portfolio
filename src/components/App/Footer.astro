@@ -1,6 +1,10 @@
 ---
-import { Email, Discord, Github } from "@assets/Icons";
+import { Icons } from "@icons/jsx/index";
+console.log(Icons);
 const { style = "" } = Astro.props;
+const Email = Icons["email"];
+const Discord = Icons["discord"];
+const Github = Icons["github"];
 ---
 
 <footer class={style}>
