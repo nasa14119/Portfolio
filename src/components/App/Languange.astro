@@ -6,9 +6,10 @@ const locale = Astro.currentLocale;
 ---
 
 <button
-  class="text-complementOne md:relative -z-10 sm:z-10 fixed bottom-5 right-5 md:bottom-0 md:right-0 sm:bg-transparent sm:backdrop-blur-none pointer-events-auto"
+  class="text-complementOne sm:text-complementOne md:relative -z-10 sm:z-10 fixed bottom-5 right-5 md:bottom-0 md:right-0 sm:bg-transparent sm:backdrop-blur-none pointer-events-auto"
   id="btn"
   data-state="idle"
+  aria-label={locale === "en" ? "cambio de idioma" : "cambio de lenguaje"}
 >
   <span class="background pointer-events-none"></span>
   <Lang class="size-6 pointer-events-none -z-10" id="lang-icon" />
@@ -57,8 +58,8 @@ const locale = Astro.currentLocale;
   }
   .background {
     width: 2.5rem;
-    height: auto;
-    @apply absolute rounded-full -inset-y-2 -right-2 bg-complementTwo/30 backdrop-blur-3xl sm:backdrop-blur-none sm:bg-complementTwo -z-50;
+    height: 2.5rem;
+    @apply absolute rounded-full -inset-y-2 -right-2 bg-secundary/50 backdrop-blur-3xl sm:backdrop-blur-none sm:bg-complementTwo -z-50;
   }
   *[data-state="open"] .background {
     animation: 250ms forwards ease open;
