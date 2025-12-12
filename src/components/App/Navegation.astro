@@ -30,7 +30,7 @@ const link = (path: string) =>
       <li class="md:hover:text-complementary min-w-[2rem]" id="contact">
         <Form
           text={nav.items[1]}
-          client:only
+          client:visible
           classStyle={"btn"}
           items={nav.form}
         />

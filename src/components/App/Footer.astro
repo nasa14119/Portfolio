@@ -19,9 +19,7 @@ const Github = Icons["github"];
       >
         <Email />
       </a>
-      <span class="md:hidden text-[12px] text-complementOne/75"
-        >nico.amaya0205@gmail.com</span
-      >
+      <span class="md:hidden text-[12px] link">nico.amaya0205@gmail.com</span>
     </li>
     <li>
       <a
@@ -31,9 +29,7 @@ const Github = Icons["github"];
       >
         <Discord />
       </a>
-      <span class="md:hidden text-[12px] text-complementOne/75"
-        >Nico.amya#0563</span
-      >
+      <span class="md:hidden text-[12px] link">Nico.amya#0563</span>
     </li>
     <li>
       <a
@@ -43,7 +39,7 @@ const Github = Icons["github"];
       >
         <Github />
       </a>
-      <span class="md:hidden text-[12px] text-complementOne/75">nasa14119</span>
+      <span class="md:hidden text-[12px] link">nasa14119</span>
     </li>
   </ul>
   <span class="absolute left-5 bottom-5 text-xs">
@@ -82,5 +78,8 @@ const Github = Icons["github"];
   }
   .social-icons li svg#email-icon {
     @apply aspect-square h-14 md:h-10;
+  }
+  .link {
+    @apply text-secundary;
   }
 </style>
