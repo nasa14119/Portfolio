@@ -2,7 +2,7 @@
 import { Icons } from "@icons/jsx/index";
 const { style = "" } = Astro.props;
 const Email = Icons["email"];
-const Discord = Icons["discord"];
+const Linkedin = Icons["linkedin"];
 const Github = Icons["github"];
 ---
 
@@ -13,7 +13,7 @@ const Github = Icons["github"];
   <ul class="social-icons">
     <li>
       <a
-        href="mailto:nico.amaya0205@gmail.com"
+        href="mailto:inbox@nicolas-amaya.com"
         target="_blank"
         aria-label="Make a Mail"
       >
@@ -23,13 +23,13 @@ const Github = Icons["github"];
     </li>
     <li>
       <a
-        href="https://discordapp.com/users/814863347165036615"
+        href="https://www.linkedin.com/in/nicolas-amaya-sar"
         target="_blank"
-        aria-label="Link to Discord"
+        aria-label="Link to Linkin"
       >
-        <Discord />
+        <Linkedin />
       </a>
-      <span class="md:hidden text-[12px] link">Nico.amya#0563</span>
+      <span class="md:hidden text-[12px] link">Nicolas Amaya</span>
     </li>
     <li>
       <a
@@ -51,6 +51,9 @@ const Github = Icons["github"];
   footer {
     grid-area: footer;
     @apply bg-white text-secundary py-20 relative md:bg-complementary  md:rounded-lg rounded-tl-3xl rounded-tr-3xl mt-10;
+  }
+  a {
+    @apply text-complementTwo;
   }
 </style>
 <style is:global>
