@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import react from "@astrojs/react";
 
@@ -16,4 +16,12 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Nunito Sans Variable",
+      cssVariable: "--font-base",
+      fallbacks: ["sans-serif"],
+    },
+  ],
 });

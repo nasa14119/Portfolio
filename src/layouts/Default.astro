@@ -1,13 +1,19 @@
 ---
 import "@assets/css/index.css";
 const { desc, title } = Astro.props;
-import "@fontsource-variable/nunito-sans";
 import "@components/ContactForm/styles.css";
 ---
 
 <html lang="es">
   <head>
     <slot name="preload" />
+    <link
+      rel="preload"
+      href="/fonts/Alien-Planet-3.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
