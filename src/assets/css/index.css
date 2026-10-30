@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 @import "tailwindcss";
+
 @plugin "@midudev/tailwind-animations";
 
 html {
   @apply bg-primary text-complementary;
 }
+
 @font-face {
   font-family: "Alien";
   src: url("../fonts/Alien-Planet-3.ttf");
 }
+
 @theme {
   --font-title: "Alien", sans-serif;
-  --font-base: "Nunito", sans-serif;
+  --font-base: "Nunito Sans Variable", sans-serif;
   /* --primary: #353535;  */
   --color-primary: #000;
   --color-light-primary: #2a2a2a;
@@ -21,6 +24,7 @@ html {
   --color-complementOne: #ffb20f;
   --color-complementTwo: #d04242;
 }
+
 h1 {
   font-family: var(--font-title);
 }
