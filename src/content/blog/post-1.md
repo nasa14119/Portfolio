@@ -1,7 +1,7 @@
 ---
   layout: "@blog/layouts/basic.astro"
   title: "Test"
-  date: "02/03/2024"
+  date: "2024-03-02"
   id: "post-1"
   # heroImage: "/ImgBlog/HeroPortalFamilia.png"
   heroImage: "https://picsum.photos/seed/picsum/1920/1080"

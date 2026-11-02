@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths, GetStaticPathsResult } from "astro";
+import { getEntry, render } from "astro:content";
+import { getCollection } from "astro:content";
+import LayoutBlog from "@blog/layouts/basic.astro";
+
+export const getStaticPaths = (async () => {
+  const entries = await getCollection("blog");
+  const params = entries.map<GetStaticPathsResult[number]>(({ id }) => ({
+    params: { postId: id },
+  }));
+  return params;
+}) satisfies GetStaticPaths;
+
+if (!Astro.params.postId) {
+  return Astro.redirect("/blog");
+}
+const { postId } = Astro.params;
+
+const article = await getEntry("blog", postId);
+
+if (!article) {
+  return Astro.redirect("/blog");
+}
+const { Content } = await render(article);
+---
+
+<LayoutBlog frontmatter={article!.data}>
+  <Content />
+</LayoutBlog>
