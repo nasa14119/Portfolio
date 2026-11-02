@@ -1,4 +1,8 @@
 ---
+import type { BlogFrontMatter } from "src/content.config";
+interface Props {
+  frontmatter: BlogFrontMatter;
+}
 const { frontmatter } = Astro.props;
 import "@assets/css/index.css";
 import "@blog/assets/default.css";
@@ -25,14 +29,13 @@ function getDate() {
         id="top"
       >
         <img
-          src={frontmatter.heroImage ||
-            "https://picsum.photos/500/250?random=3"}
+          src={
+            frontmatter.heroImage || "https://picsum.photos/500/250?random=3"
+          }
           alt="computer"
           class="min-h-full object-cover min-w-full cover -z-50"
         />
-        <div
-          class="absolute inset-0 flex justify-center items-center bg-black/40"
-        >
+        <div class="absolute inset-0 flex justify-center items-center bg-black/40">
           <h1 class="px-4 py-2 text-3xl bg-neutral-700/30">
             {frontmatter.title || "Title"}
           </h1>
@@ -44,19 +47,15 @@ function getDate() {
             class="rounded-full w-1/12 ml-5"
           />
           <ul class="flex items-center gap-x-4 text-xs mx-5 list-['#']">
-            {
-              frontmatter.categories?.map((ele: string) => (
-                <li class="pl-1">{ele} </li>
-              ))
-            }
+            {frontmatter.categories?.map((ele: string) => (
+              <li class="pl-1">{ele} </li>
+            ))}
           </ul>
         </div>
       </header>
       <Hr color="transparent" />
       <main class="rounded-3xl p-5 bg-[#202020]">
-        <h5 class="font-bold text-sm">
-          {frontmatter.date || getDate()}
-        </h5>
+        <h5 class="font-bold text-sm">{frontmatter.date || getDate()}</h5>
         <ul class="flex py-3 gap-x-4">
           <li>
             <svg
@@ -70,7 +69,8 @@ function getDate() {
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"></path>
+                d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+              ></path>
             </svg>
           </li>
           <li>
@@ -99,11 +99,13 @@ function getDate() {
               <path
                 fill-rule="evenodd"
                 d="M13.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                clip-rule="evenodd"></path>
+                clip-rule="evenodd"
+              ></path>
               <path
                 fill-rule="evenodd"
                 d="M19.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                clip-rule="evenodd"></path>
+                clip-rule="evenodd"
+              ></path>
             </svg>
           </li>
         </ul>

@@ -5,23 +5,30 @@ import Navegation from "@components/App/Navegation.astro";
 import HeroImage from "@assets/img/HeroBlog.jpeg";
 import HeroImageSkeleton from "@assets/img/HeroBlogSkeleton.jpg";
 import PreviewArticle from "@components/Blog/components/PreviewArticle.astro";
-type article = {
+import { getCollection } from "astro:content";
+type Article = {
   title: string;
   id: string;
   heroImage: string;
   categories: string[];
+  date: string;
+  url: string;
 };
-const articles = await Astro.glob("./*.md");
+const glob = await getCollection("blog");
+const articles = glob.map<Article>(({ data, id }) => ({
+  id,
+  date: data.date,
+  categories: data.categories,
+  heroImage: data.heroImage,
+  title: data.title,
+  url: `/blog/${id}`,
+}));
 ---
 
 <Default>
-  <header
-    class="h-screen w-screen relative flex justify-center items-center max-h-screen overflow-hidden"
-  >
+  <header class="h-screen w-screen relative flex justify-center items-center max-h-screen overflow-hidden">
     <Navegation />
-    <div
-      class="absolute inset-0 -z-50 before:absolute before:inset-0 before:bg-primary before:-z-40 before:opacity-40"
-    >
+    <div class="absolute inset-0 -z-50 before:absolute before:inset-0 before:bg-primary before:-z-40 before:opacity-40">
       <div
         class="inset-0 absolute bg-cover -z-50 animate-duration-500 animate-fade-in bg-center md:bg-top"
         style=`background-image:url(${HeroImageSkeleton.src})`
@@ -35,9 +42,7 @@ const articles = await Astro.glob("./*.md");
         />
       </div>
     </div>
-    <h1
-      class="text-[20vw] md:text-[225px] animate-fade-in-down animate-delay-500 animate-duration-[800ms] select-none"
-    >
+    <h1 class="text-[20vw] md:text-[225px] animate-fade-in-down animate-delay-500 animate-duration-[800ms] select-none">
       Blog
     </h1>
   </header>
@@ -46,17 +51,15 @@ const articles = await Astro.glob("./*.md");
       Articles
     </h2>
     <section class="grid-articles">
-      {
-        articles.map((article) => (
-          <PreviewArticle
-            date={article.frontmatter.date ?? "not set"}
-            hashtags={article.frontmatter.categories}
-            link={article.url ?? "#"}
-            title={article.frontmatter.title}
-            img={article.frontmatter.heroImage}
-          />
-        ))
-      }
+      {articles.map((article) => (
+        <PreviewArticle
+          date={article.date}
+          hashtags={article.categories}
+          link={article.url ?? "#"}
+          title={article.title}
+          img={article.heroImage}
+        />
+      ))}
     </section>
   </main>
 </Default>
